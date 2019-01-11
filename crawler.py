@@ -1,5 +1,6 @@
 from selenium import webdriver
 import re
+import component
 
 url_search = "http://search.danawa.com/dsearch.php?tab=goods&query="
 
@@ -19,22 +20,32 @@ f = open("vga.csv", "w")
 
 products = browser.find_elements_by_css_selector("div[class='main_prodlist main_prodlist_list'] .prod_main_info")
 
+vga = component.VGA()
+vga.setData(products)
 
-for product in products:
-    if product == "":
-        continue
-    f.write(product.find_element_by_css_selector(".prod_name a").text)
-
-    specs = product.find_element_by_css_selector(".prod_spec_set dd").text
-    specs = specs.split(" / ")
-    for spec in specs:
-        s = re.findall("\d+",spec)
-        if s == "":
-            continue
-        else:
-            f.write(",")
-            f.write(s)
-    f.write("\n")
+# for product in products:
+#     if product == "":
+#         continue
+#     f.write(product.find_element_by_css_selector(".prod_name a").text)
+#
+#     specs = product.find_element_by_css_selector(".prod_spec_set dd").text
+#     specs = specs.split(" / ")
+#     for spec in specs:
+#         s = re.findall("[a-zA-Z]+", spec)
+#         d = re.findall("[0-9]+", spec)
+#
+#         if not len(d):
+#             continue
+#         else:
+#             f.write(",")
+#             # f.write(''.join(s))
+#             if len(d) > 1:
+#                 f.write(str(d))
+#             else:
+#                 f.write(''.join(d))
+#     f.write("\n")
+#
+# f.close()
 
     # print("- name: ", product.find_element_by_css_selector(".prod_name a").text)
     # print("- spec: ", end="")
@@ -52,7 +63,7 @@ for product in products:
     #         print(",", end="")
     # print("")
 
-f.close()
+
 # save...
 # browser.save_screenshot("Website.png")
 
