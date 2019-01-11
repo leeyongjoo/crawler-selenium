@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='utf-8'?>
+<prod>
+  <ram title="삼성전자 8G DDR4 17000 SAM">
+    <minprice>106,900</minprice>
+    <maxprice>160,000</maxprice>
+    <type>DDR4</type>
+    <clock>2133MHz</clock>
+    <module>PC4-17000</module>
+  </ram>
+  <ram title="삼성전자 4G DDR3 12800 SAM">
+    <minprice>33,500</minprice>
+    <maxprice>200,020</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="삼성전자 8G DDR4 19200 SAM">
+    <minprice>103,440</minprice>
+    <maxprice>239,000</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 8G DDR3 12800 TEA">
+    <minprice>88,400</minprice>
+    <maxprice>109,410</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="삼성전자 8G DDR3 12800 SAM">
+    <minprice>109,700</minprice>
+    <maxprice>304,900</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="타무즈 8G DDR4 19200 CL17 TAM">
+    <minprice>90,210</minprice>
+    <maxprice>119,600</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="삼성전자 4G DDR4 17000 SAM">
+    <minprice>47,760</minprice>
+    <maxprice>245,460</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-17000</module>
+  </ram>
+  <ram title="삼성전자 4G DDR3 10600 SAM">
+    <minprice>31,260</minprice>
+    <maxprice>59,010</maxprice>
+    <type>DDR3</type>
+    <clock>1333MHz</clock>
+    <module>PC3-10600</module>
+  </ram>
+  <ram title="타무즈 8G DDR3 12800 CL11">
+    <minprice>82,900</minprice>
+    <maxprice>93,020</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="타무즈 4G DDR4 19200 CL17 TAM">
+    <minprice>46,900</minprice>
+    <maxprice>59,800</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="삼성전자 2G DDR3 10600 SAM">
+    <minprice>12,100</minprice>
+    <maxprice>79,320</maxprice>
+    <type>DDR3</type>
+    <clock>1333MHz</clock>
+    <module>PC3-10600</module>
+  </ram>
+  <ram title="삼성전자 2G DDR2 6400 SAM">
+    <minprice>6,100</minprice>
+    <maxprice>19,300</maxprice>
+    <type>DDR2</type>
+    <clock>800MHz</clock>
+    <module>PC2-6400</module>
+  </ram>
+  <ram title="팀그룹 T-Force 16G DDR4 25600 CL16 Night Hawk RGB 화이트 KIT TEA">
+    <minprice>274,000</minprice>
+    <maxprice>352,660</maxprice>
+    <type>DDR4</type>
+    <clock>3200MHz</clock>
+    <module>PC4-25600</module>
+  </ram>
+  <ram title="팀그룹 16G T-Force DDR4 24000 CL16 Night Hawk RGB 화이트 KIT TEA">
+    <minprice>257,000</minprice>
+    <maxprice>339,210</maxprice>
+    <type>DDR4</type>
+    <clock>3,000MHz</clock>
+    <module>PC4-24000</module>
+  </ram>
+  <ram title="게일 8G DDR4 19200 CL16 SUPER LUCE RGB Lite 화이트">
+    <minprice>112,000</minprice>
+    <maxprice>114,500</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="ESSENCORE 클레브 8G DDR4 19200 CL15 ESS">
+    <minprice>90,900</minprice>
+    <maxprice>103,000</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="ESSENCORE 클레브 8G DDR3 12800 CL9 Neo KIT ESS">
+    <minprice>77,540</minprice>
+    <maxprice>88,770</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="팀그룹 T-Force 16G DDR4 25600 CL16 Night Hawk RGB KIT TEA">
+    <minprice>268,900</minprice>
+    <maxprice>345,190</maxprice>
+    <type>DDR4</type>
+    <clock>3200MHz</clock>
+    <module>PC4-25600</module>
+  </ram>
+  <ram title="G.SKILL 8G DDR4 17000 CL15 AEGIS GSK">
+    <minprice>99,000</minprice>
+    <maxprice>115,200</maxprice>
+    <type>DDR4</type>
+    <clock>2133MHz</clock>
+    <module>PC4-17000</module>
+  </ram>
+  <ram title="팀그룹 4G DDR3 12800 TEA">
+    <minprice>39,650</minprice>
+    <maxprice>53,110</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="G.SKILL 8G  DDR4 19200 CL15 AEGIS GSK">
+    <minprice>100,000</minprice>
+    <maxprice>121,870</maxprice>
+    <type>DDR4</type>
+    <clock>2133MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 16G DDR4 24000 CL16 Night Hawk RGB KIT TEA">
+    <minprice>253,000</minprice>
+    <maxprice>331,740</maxprice>
+    <type>DDR4</type>
+    <clock>3,000MHz</clock>
+    <module>PC4-24000</module>
+  </ram>
+  <ram title="삼성전자 2G DDR3 12800 SAM">
+    <minprice>22,000</minprice>
+    <maxprice>33,020</maxprice>
+    <type>DDR3</type>
+    <clock>1600MHz</clock>
+    <module>PC3-12800</module>
+  </ram>
+  <ram title="팀그룹 T-Force 8G DDR4 21300 CL15 Delta RGB 화이트 KIT TEA">
+    <minprice>153,000</minprice>
+    <maxprice>292,600</maxprice>
+    <type>DDR4</type>
+    <clock>2666MHz</clock>
+    <module>PC4-21300</module>
+  </ram>
+  <ram title="팀그룹 T-Force 16G DDR4 19200 CL15 Delta RGB 화이트 KIT TEA">
+    <minprice>223,000</minprice>
+    <maxprice>328,910</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 T-Force 16G DDR4 19200 CL15 Delta RGB KIT TEA">
+    <minprice>219,000</minprice>
+    <maxprice>323,710</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 T-Force 8G DDR4 19200 CL15 Night Hawk RGB 화이트">
+    <minprice>124,000</minprice>
+    <maxprice>163,810</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 T-Force 8G DDR4 21300 CL15 Delta RGB KIT TEA">
+    <minprice>149,000</minprice>
+    <maxprice>193,710</maxprice>
+    <type>DDR4</type>
+    <clock>2666MHz</clock>
+    <module>PC4-21300</module>
+  </ram>
+  <ram title="팀그룹 T-Force 8G DDR4 19200 CL15 Night Hawk RGB">
+    <minprice>127,430</minprice>
+    <maxprice>161,210</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 T-Force 16G DDR4 21300 CL15 Delta RGB KIT TEA">
+    <minprice>253,900</minprice>
+    <maxprice>330,210</maxprice>
+    <type>DDR4</type>
+    <clock>2666MHz</clock>
+    <module>PC4-21300</module>
+  </ram>
+  <ram title="G.SKILL 16G DDR4 19200 CL15 AEGIS GSK">
+    <minprice>190,500</minprice>
+    <maxprice>225,600</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 8G DDR4 19200 Elite TEA">
+    <minprice>88,440</minprice>
+    <maxprice>142,190</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 T-Force 8G DDR4 19200 CL15 Delta RGB 화이트 KIT TEA">
+    <minprice>148,000</minprice>
+    <maxprice>192,410</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="팀그룹 T-Force 16G DDR4 21300 CL15 Delta RGB 화이트 KIT TEA">
+    <minprice>243,150</minprice>
+    <maxprice>335,410</maxprice>
+    <type>DDR4</type>
+    <clock>2666MHz</clock>
+    <module>PC4-21300</module>
+  </ram>
+  <ram title="팀그룹 T-FORCE 8G DDR4 19200 CL14 VULCAN RED TEA">
+    <minprice>105,000</minprice>
+    <maxprice>124,760</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="G.SKILL 8G DDR4 19200 CL15 RIPJAWS V VR GSK">
+    <minprice>108,500</minprice>
+    <maxprice>126,800</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="삼성전자 1G DDR2 5300 SAM">
+    <minprice>2,720</minprice>
+    <maxprice>5,890</maxprice>
+    <type>DDR2</type>
+    <clock>667MHz</clock>
+    <module>PC2-5300</module>
+  </ram>
+  <ram title="브이컬러 8G DDR4 19200 CL17 VCO">
+    <minprice>85,090</minprice>
+    <maxprice>95,000</maxprice>
+    <type>DDR4</type>
+    <clock>2400MHz</clock>
+    <module>PC4-19200</module>
+  </ram>
+  <ram title="게일 4G DDR4 17000 CL15 SUPER LUCE WHITE 레드">
+    <minprice>56,900</minprice>
+    <maxprice>65,600</maxprice>
+    <type>DDR4</type>
+    <clock>2133MHz</clock>
+    <module>PC4-17000</module>
+  </ram>
+  <ram title="게일 4G DDR4 17000 CL15 SUPER LUCE BLACK 레드 GEI">
+    <minprice>48,000</minprice>
+    <maxprice>65,600</maxprice>
+    <type>DDR4</type>
+    <clock>2133MHz</clock>
+    <module>PC4-17000</module>
+  </ram>
+</prod>

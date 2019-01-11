@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='utf-8'?>
+<prod>
+  <cpu title="인텔 코어i7 7세대 카비레이크 7700K">
+    <minprice>380,050</minprice>
+    <maxprice>1,214,120</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>4.2GHz</clock>
+    <power>91W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5 7세대 카비레이크 7500">
+    <minprice>206,950</minprice>
+    <maxprice>1,168,510</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.4GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5-6세대 스카이레이크 6600">
+    <minprice>240,420</minprice>
+    <maxprice>1,314,900</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.3GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="AMD 비쉐라 8300">
+    <minprice>85,560</minprice>
+    <maxprice>215,890</maxprice>
+    <socket>AMD-소켓AM3+</socket>
+    <core>옥타(8) 코어</core>
+    <clock>3.3GHz</clock>
+    <power>95W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보코어, </etc>
+  </cpu>
+  <cpu title="인텔 코어i7 7세대 카비레이크 7700">
+    <minprice>333,830</minprice>
+    <maxprice>1,168,800</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.6GHz</clock>
+    <power>65W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i3 i3-6세대 6100 스카이레이크">
+    <minprice>118,350</minprice>
+    <maxprice>779,160</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>듀얼 코어</core>
+    <clock>3.7GHz</clock>
+    <power>51W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="인텔 코어i7-6세대 스카이레이크 6700K">
+    <minprice>383,490</minprice>
+    <maxprice>779,200</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>4.0GHz</clock>
+    <power>91W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5-6세대 스카이레이크 6500">
+    <minprice>200,800</minprice>
+    <maxprice>853,600</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.2GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 펜티엄 카비레이크 G4560">
+    <minprice>81,710</minprice>
+    <maxprice>430,000</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>듀얼 코어</core>
+    <clock>3.5GHz</clock>
+    <power>54W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="AMD 라이젠5 서밋릿지 1600">
+    <minprice>272,550</minprice>
+    <maxprice>378,190</maxprice>
+    <socket>AMD-소켓AM4</socket>
+    <core>헥사(6) 코어</core>
+    <clock>3.2GHz</clock>
+    <power>65W</power>
+    <cache>16MB</cache>
+    <etc>부가기능 : 배수제한 해제, 터보코어, </etc>
+  </cpu>
+  <cpu title="인텔 코어i7 4세대 4790 하스웰 리프래시">
+    <minprice>317,110</minprice>
+    <maxprice>499,900</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>쿼드 코어</core>
+    <clock>3.6GHz</clock>
+    <power>84W</power>
+    <cache>8MB</cache>
+    <etc> </etc>
+  </cpu>
+  <cpu title="인텔 코어i5 아이비브릿지 3570  ">
+    <minprice>111,980</minprice>
+    <maxprice>276,670</maxprice>
+    <socket>인텔-소켓1155</socket>
+    <core>쿼드 코어</core>
+    <clock>3.4GHz</clock>
+    <power>77W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i7-6세대 스카이레이크 6700">
+    <minprice>342,090</minprice>
+    <maxprice>1,329,870</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.4GHz</clock>
+    <power>65W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5 7세대 카비레이크 7600">
+    <minprice>237,150</minprice>
+    <maxprice>1,168,650</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.5GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 펜티엄 G4400 스카이레이크">
+    <minprice>52,100</minprice>
+    <maxprice>779,160</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>듀얼 코어</core>
+    <clock>3.3GHz</clock>
+    <power>54W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="인텔 코어i7 아이비브릿지 3770">
+    <minprice>모바일가격</minprice>
+    <maxprice>345,000</maxprice>
+    <socket>인텔-소켓1155</socket>
+    <core>쿼드 코어</core>
+    <clock>3.4GHz</clock>
+    <power>77W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 셀러론 하스웰 리프레시 G1840">
+    <minprice>48,880</minprice>
+    <maxprice>99,020</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>듀얼 코어</core>
+    <clock>2.8GHz</clock>
+    <power>53W</power>
+    <cache>2MB</cache>
+    <etc> </etc>
+  </cpu>
+  <cpu title="인텔 코어i3 아이비브릿지 3220">
+    <minprice>58,150</minprice>
+    <maxprice>235,120</maxprice>
+    <socket>인텔-소켓1155</socket>
+    <core>듀얼 코어</core>
+    <clock>3.3GHz</clock>
+    <power>55W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, </etc>
+  </cpu>
+  <cpu title="인텔 펜티엄 카비레이크 G4600">
+    <minprice>85,990</minprice>
+    <maxprice>140,000</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>듀얼 코어</core>
+    <clock>3.6GHz</clock>
+    <power>51W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5 7세대 카비레이크 7400">
+    <minprice>187,670</minprice>
+    <maxprice>1,168,650</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.0GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 하스웰 리프레시 4460">
+    <minprice>189,000</minprice>
+    <maxprice>883,000</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>쿼드 코어</core>
+    <clock>3.2GHz</clock>
+    <power>84W</power>
+    <cache>6MB</cache>
+    <etc> </etc>
+  </cpu>
+  <cpu title="인텔 코어i5-6세대 6400 스카이레이크">
+    <minprice>177,770</minprice>
+    <maxprice>856,970</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>2.7GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 셀러론 스카이레이크 G3900">
+    <minprice>33,580</minprice>
+    <maxprice>286,000</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>듀얼 코어</core>
+    <clock>2.8GHz</clock>
+    <power>51W</power>
+    <cache>2MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="인텔 펜티엄 하스웰 리프레시 G3260">
+    <minprice>73,900</minprice>
+    <maxprice>99,410</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>듀얼 코어</core>
+    <clock>3.3GHz</clock>
+    <power>53W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="인텔 코어i3 7세대 카비레이크 7100">
+    <minprice>117,660</minprice>
+    <maxprice>1,168,650</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>듀얼 코어</core>
+    <clock>3.9GHz</clock>
+    <power>51W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="AMD 라이젠7 서밋릿지 1700">
+    <minprice>371,500</minprice>
+    <maxprice>451,000</maxprice>
+    <socket>AMD-소켓AM4</socket>
+    <core>옥타(8) 코어</core>
+    <clock>3.0GHz</clock>
+    <power>65W</power>
+    <cache>16MB</cache>
+    <etc>부가기능 : 배수제한 해제, 터보코어, </etc>
+  </cpu>
+  <cpu title="인텔 코어i7 X-시리즈 스카이레이크 7820X">
+    <minprice>704,100</minprice>
+    <maxprice>975,040</maxprice>
+    <socket>인텔-소켓2066</socket>
+    <core>옥타(8) 코어</core>
+    <clock>3.6GHz</clock>
+    <power>140W</power>
+    <cache>11MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 제온 하스웰 리프레시 E3-1231V3">
+    <minprice>282,900</minprice>
+    <maxprice>1,123,600</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>쿼드 코어</core>
+    <clock>3.4GHz</clock>
+    <power>80W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 터보부스트, </etc>
+  </cpu>
+  <cpu title="AMD 라이젠5 서밋릿지 1600X">
+    <minprice>296,040</minprice>
+    <maxprice>419,420</maxprice>
+    <socket>AMD-소켓AM4</socket>
+    <core>헥사(6) 코어</core>
+    <clock>3.6GHz</clock>
+    <power>95W</power>
+    <cache>16MB</cache>
+    <etc>부가기능 : 배수제한 해제, 터보코어, </etc>
+  </cpu>
+  <cpu title="인텔 코어i3 하스웰 리프레시 4170">
+    <minprice>130,200</minprice>
+    <maxprice>245,960</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>듀얼 코어</core>
+    <clock>3.7GHz</clock>
+    <power>54W</power>
+    <cache>3MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, </etc>
+  </cpu>
+  <cpu title="인텔 하스웰 리프레시 4690">
+    <minprice>184,560</minprice>
+    <maxprice>467,000</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>쿼드 코어</core>
+    <clock>3.5GHz</clock>
+    <power>84W</power>
+    <cache>6MB</cache>
+    <etc> </etc>
+  </cpu>
+  <cpu title="인텔 울프데일 E8400">
+    <minprice>7,800</minprice>
+    <maxprice>35,000</maxprice>
+    <socket>인텔-소켓775</socket>
+    <core>듀얼 코어</core>
+    <clock>3.0GHz</clock>
+    <power>65W</power>
+    <cache>6MB</cache>
+    <etc> </etc>
+  </cpu>
+  <cpu title="인텔 하이엔드 데스크탑 6800K">
+    <minprice>434,470</minprice>
+    <maxprice>623,850</maxprice>
+    <socket>소켓2011-V3</socket>
+    <core>헥사(6) 코어</core>
+    <clock>3.4GHz</clock>
+    <power>140W</power>
+    <cache>15MB</cache>
+    <etc>부가기능 : 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5-6세대 스카이레이크 6600K">
+    <minprice>279,160</minprice>
+    <maxprice>705,586</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.5GHz</clock>
+    <power>91W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="AMD 라이젠3 서밋릿지 1200">
+    <minprice>133,910</minprice>
+    <maxprice>143,000</maxprice>
+    <socket>AMD-소켓AM4</socket>
+    <core>쿼드 코어</core>
+    <clock>3.1GHz</clock>
+    <power>65W</power>
+    <cache>8MB</cache>
+    <etc>부가기능 : 배수제한 해제, 터보코어, </etc>
+  </cpu>
+  <cpu title="AMD 카베리 7600">
+    <minprice>81,260</minprice>
+    <maxprice>129,000</maxprice>
+    <socket>AMD-소켓FM2+</socket>
+    <core>쿼드 코어</core>
+    <clock>3.1GHz</clock>
+    <power>65W</power>
+    <cache>4MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보코어, </etc>
+  </cpu>
+  <cpu title="인텔 코어i5 7세대 카비레이크 7600K">
+    <minprice>263,850</minprice>
+    <maxprice>500,000</maxprice>
+    <socket>인텔-소켓1151</socket>
+    <core>쿼드 코어</core>
+    <clock>3.8GHz</clock>
+    <power>91W</power>
+    <cache>6MB</cache>
+    <etc>부가기능 : 그래픽코어 내장, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 코어i9 X-시리즈 스카이레이크 7900X">
+    <minprice>1,228,940</minprice>
+    <maxprice>1,386,790</maxprice>
+    <socket>인텔-소켓2066</socket>
+    <core>데카(10) 코어</core>
+    <clock>3.3GHz</clock>
+    <power>140W</power>
+    <cache>13.75MB</cache>
+    <etc>부가기능 : 하이퍼스레딩, 터보부스트, </etc>
+  </cpu>
+  <cpu title="인텔 셀러론 하스웰 리프레시 G1850">
+    <minprice>51,790</minprice>
+    <maxprice>87,210</maxprice>
+    <socket>인텔-소켓1150(하스웰)</socket>
+    <core>듀얼 코어</core>
+    <clock>2.9GHz</clock>
+    <power>54W</power>
+    <cache>2MB</cache>
+    <etc> </etc>
+  </cpu>
+  <cpu title="AMD 라이젠7 서밋릿지 1700X">
+    <minprice>446,400</minprice>
+    <maxprice>594,850</maxprice>
+    <socket>AMD-소켓AM4</socket>
+    <core>옥타(8) 코어</core>
+    <clock>3.4GHz</clock>
+    <power>95W</power>
+    <cache>16MB</cache>
+    <etc>부가기능 : 배수제한 해제, 터보코어, </etc>
+  </cpu>
+</prod>
