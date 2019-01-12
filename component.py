@@ -2,7 +2,7 @@ import re
 
 #===== column name
 v_col = ['name', 'manufacturer', 'type', 'prod', 'nm', 'clock', 'b_clock', 'sp',
-           'PCIe', 'gddr', 'memory_c', 'memory_v', 'memory_b', 'etc']
+           'PCIe', 'gddr', 'memory_c', 'memory_v', 'memory_b', 'etc', 'price']
 v_dist = ['nm', '', '', '개', '', 'GDDR', 'MHz', 'GB', '-bit', '']
 #==========
 
@@ -14,7 +14,7 @@ class VGA:
     def initData(self):
         self.d = {col:"NA" for col in v_col}
 
-    def setData(self, products):
+    def preprocessData(self, products):
 
         for product in products:
             if product == "":
@@ -32,13 +32,13 @@ class VGA:
                 word = re.findall("[^0-9]+", spec)
                 num = re.findall("[0-9]+", spec)
 
-                if i == len(v_col)-1:
+                if i == len(v_col)-2:
                     if self.d[v_col[i]] == "NA":
                         self.d[v_col[i]] = spec
                     else:
                         self.d[v_col[i]] += " / " + spec
 
-                while(i < len(v_col)-1):
+                while(i < len(v_col)-2):
 
                     if i == 3:
                         if spec.find(" ") != -1:
@@ -72,6 +72,9 @@ class VGA:
                         self.d[v_col[i]] = num[0]
                         i += 1
                         break
+
+            price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
+            self.d[v_col[-1]] = price.replace(",", "")
 
             self.printData()
             self.initData()
