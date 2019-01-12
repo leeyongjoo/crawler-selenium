@@ -29,37 +29,41 @@ class VGA:
             specs = specs.split(" / ")
             for spec in specs:
 
-
-                if i == 3:
-                    if spec.find(" ") != -1:
-                        self.d[v_col[i]] = ''.join(spec.split(" ")[1:])
-                    i += 1
-                    continue
-
                 word = re.findall("[^0-9]+", spec)
                 num = re.findall("[0-9]+", spec)
 
-
-                # 특정 형식
-                if i == 5:  # 5:clock 6:b_clock
-                    if len(num) > 1:
-                        self.d[v_col[i]] = num[0]; i += 1
-                        self.d[v_col[i]] = num[1]; i += 1
+                if i == len(v_col)-1:
+                    if self.d[v_col[i]] == "NA":
+                        self.d[v_col[i]] = spec
                     else:
-                        if len(word) == 1:
-                            self.d[v_col[i]] = num[0]
+                        self.d[v_col[i]] += " / " + spec
+
+                while(i < len(v_col)-1):
+
+                    if i == 3:
+                        if spec.find(" ") != -1:
+                            self.d[v_col[i]] = ''.join(spec.split(" ")[1:])
+                        i += 1
+                        break
+
+                    if i == 5:  # 5:clock 6:b_clock
+                        if len(num) > 1:
+                            self.d[v_col[i]] = num[0]; i += 1
+                            self.d[v_col[i]] = num[1]; i += 1
+                            break
                         else:
-                            self.d[v_col[i+1]] = num[0]
-                        i += 2
+                            if len(word) == 1:
+                                self.d[v_col[i]] = num[0]
+                            elif len(word) == 2:
+                                self.d[v_col[i+1]] = num[0]
+                            i += 2
+                            break
 
-                elif i == 8:    # 8:PCIe
-                    if spec[:4] == "PCIe":
-                        self.d[v_col[i]] = spec[4:]
-                    i += 1
-
-
-
-                elif i < len(v_col)-1:
+                    if i == 8:    # 8:PCIe
+                        if spec[:4] == "PCIe":
+                            self.d[v_col[i]] = spec[4:]
+                        i += 1
+                        break
 
                     if v_dist[i-4] != word[0]:
                         i += 1
@@ -67,12 +71,7 @@ class VGA:
                     elif len(num):
                         self.d[v_col[i]] = num[0]
                         i += 1
-
-                elif i == len(v_col)-1:
-                    if self.d[v_col[i]] == "NA":
-                        self.d[v_col[i]] = spec
-                    else:
-                        self.d[v_col[i]] += " / " + spec
+                        break
 
             self.printData()
             self.initData()

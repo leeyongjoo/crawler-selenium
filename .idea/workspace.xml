@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c141a046-e9e4-4683-9a77-5a336339a395" name="Default Changelist" comment="test2">
+    <list default="true" id="c141a046-e9e4-4683-9a77-5a336339a395" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component.py" beforeDir="false" afterPath="$PROJECT_DIR$/component.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
+            <state relative-caret-position="24">
               <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="10" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/component.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+            <state relative-caret-position="249">
+              <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -278,11 +277,19 @@
       <option name="project" value="LOCAL" />
       <updated>1547218754827</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PCIe가 없으면 뒤에 있는 요소가 적재가 안됌">
+      <created>1547301009504</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547301009505</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0943098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -357,7 +364,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="test2" />
     <MESSAGE value="succeed crawling" />
-    <option name="LAST_COMMIT_MESSAGE" value="succeed crawling" />
+    <MESSAGE value="PCIe가 없으면 뒤에 있는 요소가 적재가 안됌" />
+    <option name="LAST_COMMIT_MESSAGE" value="PCIe가 없으면 뒤에 있는 요소가 적재가 안됌" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Desktop/python-for-machine-learning_20180205/ch2/selenium-capture.py">
@@ -419,9 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vga.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/combing/vga_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -435,9 +440,12 @@
     <entry file="file://$PROJECT_DIR$/ghostdriver.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/vga.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
+        <state relative-caret-position="24">
           <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="10" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
@@ -447,8 +455,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/component.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+        <state relative-caret-position="249">
+          <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
         </state>
       </provider>
     </entry>
