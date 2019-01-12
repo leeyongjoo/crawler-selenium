@@ -9,6 +9,7 @@ url_vga = url_search + "vga"
 
 # use Chrome webdriver
 browser = webdriver.Chrome()
+
 # wait 3 minutes
 browser.implicitly_wait(3)
 # URL connect

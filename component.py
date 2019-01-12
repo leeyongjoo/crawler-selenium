@@ -1,9 +1,9 @@
 import re
 
 #===== column name
-v_col = ['name', 'type', 'nm', 'coreclock', 'b_coreclock', 'sp',
-           'pcie_v1', 'pcie_v2', 'pcie_x', 'gddr', 'memoryclock', 'volume', 'bus']
-
+v_col = ['name', 'manufacturer', 'type', 'prod', 'nm', 'clock', 'b_clock', 'sp',
+           'PCIe', 'gddr', 'memory_c', 'memory_v', 'memory_b', 'etc']
+v_dist = ['nm', '', '', '개', '', 'GDDR', 'MHz', 'GB', '-bit', '']
 #==========
 
 # VGA
@@ -21,31 +21,64 @@ class VGA:
                 continue
 
             self.d[v_col[0]] = product.find_element_by_css_selector(".prod_name a").text
+            self.d[v_col[1]] = self.d[v_col[0]].split(" ")[0]
+            self.d[v_col[2]] = 'vga'
 
-            i = 1
+            i = 3
             specs = product.find_element_by_css_selector(".prod_spec_set dd").text
             specs = specs.split(" / ")
             for spec in specs:
-                k = re.findall("[a-zA-Z]+", spec)
-                v = re.findall("[0-9]+", spec)
 
-                if i == len(v_col): break
-                if not len(v): continue
-                else:
-                    if len(v) == 1:
-                        self.d[v_col[i]] = ''.join(v)
-                        i += 1
+
+                if i == 3:
+                    if spec.find(" ") != -1:
+                        self.d[v_col[i]] = ''.join(spec.split(" ")[1:])
+                    i += 1
+                    continue
+
+                word = re.findall("[^0-9]+", spec)
+                num = re.findall("[0-9]+", spec)
+
+
+                # 특정 형식
+                if i == 5:  # 5:clock 6:b_clock
+                    if len(num) > 1:
+                        self.d[v_col[i]] = num[0]; i += 1
+                        self.d[v_col[i]] = num[1]; i += 1
                     else:
-                        for a in v:
-                            self.d[v_col[i]] = a
-                            i+=1
+                        if len(word) == 1:
+                            self.d[v_col[i]] = num[0]
+                        else:
+                            self.d[v_col[i+1]] = num[0]
+                        i += 2
+
+                elif i == 8:    # 8:PCIe
+                    if spec[:4] == "PCIe":
+                        self.d[v_col[i]] = spec[4:]
+                    i += 1
 
 
+
+                elif i < len(v_col)-1:
+
+                    if v_dist[i-4] != word[0]:
+                        i += 1
+
+                    elif len(num):
+                        self.d[v_col[i]] = num[0]
+                        i += 1
+
+                elif i == len(v_col)-1:
+                    if self.d[v_col[i]] == "NA":
+                        self.d[v_col[i]] = spec
+                    else:
+                        self.d[v_col[i]] += " / " + spec
 
             self.printData()
+            self.initData()
+
 
     def printData(self):
-        print("name:" + self.d[v_col[0]])
-        print(" - specs")
+        print("- name : " + self.d[v_col[0]])
         for col in v_col[1:]:
-            print("\t" + col + " : " + str(self.d[col]))
+            print(col + " : " + str(self.d[col]))
