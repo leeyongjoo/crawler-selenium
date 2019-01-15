@@ -1,7 +1,8 @@
 import re
+import csv
 
 #===== column name
-v_col = ['name', 'manufacturer', 'type', 'prod', 'nm', 'clock', 'b_clock', 'sp',
+v_col = ['name', 'manufacturer', 'type', 'prod_name', 'nm', 'clock', 'b_clock', 'sp',
            'PCIe', 'gddr', 'memory_c', 'memory_v', 'memory_b', 'etc', 'price']
 v_dist = ['nm', '', '', '개', '', 'GDDR', 'MHz', 'GB', '-bit', '']
 #==========
@@ -16,12 +17,19 @@ class VGA:
 
     def preprocessData(self, products):
 
+        f = open("test.csv", "a")
+
         for product in products:
             if product == "":
                 continue
 
             self.d[v_col[0]] = product.find_element_by_css_selector(".prod_name a").text
-            self.d[v_col[1]] = self.d[v_col[0]].split(" ")[0]
+
+            name_split = self.d[v_col[0]].split(" ")
+            if name_split[-1] == "(중고)":
+                continue
+
+            self.d[v_col[1]] = name_split[0]
             self.d[v_col[2]] = 'vga'
 
             i = 3
@@ -29,16 +37,20 @@ class VGA:
             specs = specs.split(" / ")
             for spec in specs:
 
-                word = re.findall("[^0-9]+", spec)
-                num = re.findall("[0-9]+", spec)
-
                 if i == len(v_col)-2:
                     if self.d[v_col[i]] == "NA":
                         self.d[v_col[i]] = spec
                     else:
                         self.d[v_col[i]] += " / " + spec
 
+                word = re.findall("[^0-9]+", spec)
+                num = re.findall("[0-9]+", spec)
+
                 while(i < len(v_col)-2):
+
+                    if not len(num):
+                        i+=1
+                        continue
 
                     if i == 3:
                         if spec.find(" ") != -1:
@@ -73,14 +85,28 @@ class VGA:
                         i += 1
                         break
 
+
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             self.d[v_col[-1]] = price.replace(",", "")
 
-            self.printData()
+            # self.printData()
+            self.saveDataToCSV()
             self.initData()
 
+        f.close()
 
     def printData(self):
         print("- name : " + self.d[v_col[0]])
         for col in v_col[1:]:
             print(col + " : " + str(self.d[col]))
+
+    def saveDataToCSV(self):
+        f = open('output.csv', 'a', encoding='utf-8', newline='')
+        wr = csv.writer(f)
+
+        col_list = []
+        for col in v_col:
+            col_list.append(self.d[col])
+
+        wr.writerow(col_list)
+        f.close()
