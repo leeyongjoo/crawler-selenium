@@ -19,7 +19,6 @@ class VGA:
     """
     def preprocessListData(self, products):
 
-        self.__init__()
         for product in products:
             if product == "":
                 continue
@@ -94,7 +93,7 @@ class VGA:
             self.d[v_col[-1]] = price.replace(",", "")
 
             self.saveDataToCSV()
-
+            self.d = {col: "NA" for col in v_col}   # init dict
 
 
     def printData(self):
