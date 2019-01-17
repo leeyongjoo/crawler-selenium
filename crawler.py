@@ -12,11 +12,12 @@ browser.implicitly_wait(3)
 # crawling
 
 #===== test
-f = open('output.csv', 'w', encoding='utf-8', newline='')
-f.close
+# f = open('output.csv', 'w', encoding='utf-8', newline='')
+# f.close
 #=====;
 
 vga = component.VGA()
+vga.initCSV()
 
 for a in range(1,num_page+1):
     url_vga = url_search + "vga"

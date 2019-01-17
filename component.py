@@ -101,6 +101,18 @@ class VGA:
         for col in v_col[1:]:
             print(col + " : " + str(self.d[col]))
 
+    def initCSV(self):
+        f = open('output.csv', 'w', encoding='utf-8', newline='')
+        wr = csv.writer(f)
+
+        col_list = []
+        for col in v_col:
+            col_list.append(col)
+
+        wr.writerow(col_list)
+        f.close
+
+
     def saveDataToCSV(self):
         f = open('output.csv', 'a', encoding='utf-8', newline='')
         wr = csv.writer(f)
