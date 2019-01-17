@@ -1,3 +1,4 @@
+'name', 'manufacturer', 'type', 'prod_name', 'nm', 'clock', 'b_clock', 'sp','PCIe', 'gddr', 'memory_c', 'memory_v', 'memory_b', 'etc', 'price'
 이엠텍 XENON 지포스 RTX 2070 STORM X Dual D6 8GB,이엠텍,vga,RTX2070,12,1410,1620,2304,3.0x16,6,14000,8,256,DVI / HDMI / DP / 최대 모니터 4개 / 최대 175W / 정격파워 550W 이상 / 전원부: 6+2페이즈 / 2개 팬 / 235mm / LED 라이트,610500
 ZOTAC AMP 지포스 GTX1060 D5 3GB,ZOTAC,vga,GTX1060,16,1582,1797,1152,3.0x16,5,8000,3,192,DVI / HDMI / DP / 최대 모니터 4개 / 최대 120W / 정격파워 400W 이상 / 전원부: 5페이즈 / 2개 팬 / 206mm,206100
 이엠텍 XENON 지포스 GTX1060 STORM X Dual D5 6GB,이엠텍,vga,GTX1060,16,1506,1708,1280,3.0x16,5,8000,6,192,DVI / HDMI / DP / 최대 모니터 4개 / 최대 120W / 정격파워 400W 이상 / 전원부: 4페이즈 / 2개 팬 / 250mm,323400
