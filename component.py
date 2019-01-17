@@ -13,9 +13,8 @@ class VGA:
         self.d = {col:"NA" for col in v_col}
 
     """
-    param 
-    param 
-    desc
+    param products
+    desc /로 구분된 제품
     """
     def preprocessListData(self, products):
 
@@ -91,7 +90,10 @@ class VGA:
 
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             self.d[v_col[-1]] = price.replace(",", "")
+            if not self.d[v_col[-1]].isdigit():
+                self.d[v_col[-1]] = 'NA'
 
+            # self.printData()
             self.saveDataToCSV()
             self.d = {col: "NA" for col in v_col}   # init dict
 

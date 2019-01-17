@@ -2,7 +2,7 @@ from selenium import webdriver
 import component
 
 url_search = "http://search.danawa.com/dsearch.php?tab=goods&limit=90&query="
-num_page = 1    # 90 * pages
+num_page = 5    # 90 * pages
 
 # use Chrome webdriver
 browser = webdriver.Chrome()
