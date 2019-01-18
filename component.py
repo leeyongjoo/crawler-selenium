@@ -1,24 +1,59 @@
 import re
 import csv
+from time import localtime,strftime
 
-#===== column name
+#===== column name list
 v_col = ['name', 'manufacturer', 'type', 'prod_name', 'nm', 'clock', 'b_clock', 'sp',
            'PCIe', 'gddr', 'memory_c', 'memory_v', 'memory_b', 'etc', 'price']
 v_dist = ['nm', '', '', '개', '', 'GDDR', 'MHz', 'GB', '-bit', '']
 #===== ;
 
-# VGA
-class VGA:
-    def __init__(self):
-        self.d = {col:"NA" for col in v_col}
+col_list = {'vga':v_col}
+csv_path = './csv/'
+
+class Component:
+    d = None            # dict
+    com_type = None     # component type
+    fpath_fname = None  # filepath + filename
+
+    def __init__(self, com_type):
+        self.com_type = com_type
+        self.d = {col:"NA" for col in col_list[com_type]}
+        self.saveCSV(com_type)
+
+    def printData(self, com_type):
+        c_l = col_list[com_type]
+        print("- name : " + self.d[c_l[0]])
+        for col in c_l[1:]:
+            print(col + " : " + str(self.d[col]))
+
+    def saveCSV(self, com_type):
+        fpath = csv_path + com_type + "/"
+        fname = com_type + strftime("_%y%m%d_%H%M.csv", localtime())
+        self.fpath_fname = fpath + fname
+
+        # create csv and save col_names to csv
+        f = open(self.fpath_fname, 'w', encoding='utf-8', newline='')
+        # wr = csv.writer(f)
+        # wr.writerow(self.d.keys())
+        f.close()
+
+    def saveDataToCSV(self):
+        # save data to csv
+        f = open(self.fpath_fname, 'a', encoding='utf-8', newline='')
+        wr = csv.writer(f)
+        wr.writerow(self.d.values())
+        f.close()
 
     """
     param products
-    desc /로 구분된 제품
+    desc /로 구분된 제품 정보들을 해당 컬럼명 별로 나눠서 csv로 저장
     """
-    def preprocessListData(self, products):
-
+    # VGA
+    def preprocessVGA(self, products):
         for product in products:
+            self.d = {col: "NA" for col in col_list[self.com_type]}  # init dict
+
             if product == "":
                 continue
 
@@ -82,7 +117,6 @@ class VGA:
 
                     if v_dist[i-4] != word[0]:
                         i += 1
-
                     elif len(num):
                         self.d[v_col[i]] = num[0]
                         i += 1
@@ -90,38 +124,13 @@ class VGA:
 
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             self.d[v_col[-1]] = price.replace(",", "")
+
+            # filter the data has no price
             if not self.d[v_col[-1]].isdigit():
                 self.d[v_col[-1]] = 'NA'
 
-            # self.printData()
             self.saveDataToCSV()
-            self.d = {col: "NA" for col in v_col}   # init dict
 
 
-    def printData(self):
-        print("- name : " + self.d[v_col[0]])
-        for col in v_col[1:]:
-            print(col + " : " + str(self.d[col]))
-
-    def initCSV(self):
-        f = open('output.csv', 'w', encoding='utf-8', newline='')
-        wr = csv.writer(f)
-
-        col_list = []
-        for col in v_col:
-            col_list.append(col)
-
-        wr.writerow(col_list)
-        f.close
 
 
-    def saveDataToCSV(self):
-        f = open('output.csv', 'a', encoding='utf-8', newline='')
-        wr = csv.writer(f)
-
-        col_list = []
-        for col in v_col:
-            col_list.append(self.d[col])
-
-        wr.writerow(col_list)
-        f.close()
