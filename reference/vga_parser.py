@@ -1,5 +1,5 @@
 import requests
-import combing.func as func
+import reference.func as func
 import re
 from bs4 import BeautifulSoup
 from xml.etree.ElementTree import Element, SubElement
