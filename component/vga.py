@@ -55,7 +55,7 @@ class Vga:
 
             i = 2  # v_col index (start from 'prod_name')
 
-            # specs is string sep by '/'
+            # specs is string sep by ' / '
             specs = product.find_element_by_css_selector(".prod_spec_set dd").text
             specs = specs.split(" / ")
             for spec in specs:
