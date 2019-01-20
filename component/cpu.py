@@ -4,7 +4,7 @@ CPU 제품 정보 처리
 import re
 
 #===== column name list
-c_col = ['pcode', 'name', 'manufacturer', 'socket', 'nm', 'core', 'thread', 'clock',
+c_col = ['name', 'manufacturer', 'socket', 'nm', 'core', 'thread', 'clock',
          'l2', 'l3', 'bit', 'tdp', 'gpu_name', 'gpu_core', 'etc', 'price']
 c_dist = ['', 'nm', '코어', '개', 'GHz', 'B', 'B', '비트', 'W',
           ['인텔', 'AMD'], 'MHz']
@@ -51,14 +51,14 @@ class Cpu:
             if name_split[-1] == "(중고)":
                 continue
 
-            pcode = product.find_element_by_css_selector(".relation_goods_unit").get_attribute('id')
-            pcode = re.findall("[0-9]+", pcode)[0]
+            # pcode = product.find_element_by_css_selector(".relation_goods_unit").get_attribute('id')
+            # pcode = re.findall("[0-9]+", pcode)[0]
+            #
+            # self._dict[c_col[0]] = pcode            # pcode
+            self._dict[c_col[0]] = name             # name
+            self._dict[c_col[1]] = name_split[0]    # manufacturer
 
-            self._dict[c_col[0]] = pcode            # pcode
-            self._dict[c_col[1]] = name             # name
-            self._dict[c_col[2]] = name_split[0]    # manufacturer
-
-            i = 3  # c_col index (start from 'prod_name')
+            i = 2  # c_col index (start from 'prod_name')
 
             # specs is string sep by ' / '
             specs = product.find_element_by_css_selector(".prod_spec_set dd").text
@@ -77,34 +77,31 @@ class Cpu:
                 word = re.findall("[^0-9]+", spec)
                 num = re.findall("[0-9]+", spec)
 
-                if spec[-2:] == '비트':
-                    continue
-
                 # until c_col[i] == 'etc'
                 while (i < len(c_col) - 2):
 
-                    j = i - 3  # c_dist index
+                    j = i - 2  # c_dist index
 
-                    if i == 3:  # 3: socket
+                    if i == 2:  # 2: socket
                         s_split = spec.split("(")
                         if self._dict[c_col[1]] == s_split[0]:
                             self._dict[c_col[i]] = s_split[1].replace(")", "")
                         i += 1
                         break
 
-                    if i == 5:  # 5: core
+                    if i == 4:  # 4: core
                         if spec[-2:] == c_dist[j]:
                             self._dict[c_col[i]] = spec[:2]
                             i+=1
                             break
 
-                    if i == 7:  # 7: clock
+                    if i == 6:  # 6: clock
                         if word[-1] == c_dist[j]:
                             self._dict[c_col[i]] = spec.replace(c_dist[j], "")
                             i+=1
                             break
 
-                    if i == 8:  # 8: l2
+                    if i == 7:  # 7: l2
                         if word[-1][-1] == 'B':
                             self._dict[c_col[i+1]] = num[0]
                             i+=1
@@ -113,14 +110,20 @@ class Cpu:
                             self._dict[c_col[i]] = int(num[0]) * int(num[1])
                             i+=1
                             break
-                    if i == 9:  # 9: l3
+                    if i == 8:  # 8: l3
                         if word[0][-1] == 'B':
                             self._dict[c_col[i-1]] = self._dict[c_col[i]]
                             self._dict[c_col[i]] = num[0]
                             i+=1
                             break
 
-                    if i == 12: # 12: gpu_name
+                    if i == 9: # 9: bit
+                        if spec[-2:] == c_dist[j]:
+                            self._dict[c_col[i]] = spec[:-2]
+                            i+=1
+                            break
+
+                    if i == 11: # 11: gpu_name
                         if spec.split(" ")[0] in c_dist[j]:
                             self._dict[c_col[i]] = spec
                             i+=1

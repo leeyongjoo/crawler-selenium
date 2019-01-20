@@ -1,5 +1,6 @@
 from selenium import webdriver
 import component.cpu
+import component.vga
 import file
 
 # url: danawa.com / tab: ad / limit: number of products / query: something to search
@@ -54,7 +55,7 @@ if __name__ == "__main__":
     # file1.createCSV(vga1._name)
     #
     # url_vga = url_search + vga1._name
-    # pages_vga = 2
+    # pages_vga = 9
     #
     # crawler1.crawling(url_vga, pages_vga, vga1, file1)
     # crawler1.quit()

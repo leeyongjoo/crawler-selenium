@@ -50,6 +50,10 @@ class Vga:
             if name_split[-1] == "(중고)":
                 continue
 
+            # pcode = product.find_element_by_css_selector(".relation_goods_unit").get_attribute('id')
+            # pcode = re.findall("[0-9]+", pcode)[0]
+            #
+            # self._dict[v_col[0]] = pcode  # pcode
             self._dict[v_col[0]] = name             # name
             self._dict[v_col[1]] = name_split[0]    # manufacturer
 
