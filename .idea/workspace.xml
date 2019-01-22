@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c141a046-e9e4-4683-9a77-5a336339a395" name="Default Changelist" comment="change the name of a method to snake case">
-      <change afterPath="$PROJECT_DIR$/csv/cpu/Read.me" afterDir="false" />
+    <list default="true" id="c141a046-e9e4-4683-9a77-5a336339a395" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/cpu.py" beforeDir="false" afterPath="$PROJECT_DIR$/component/cpu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/cpu/cpu_190120_1808.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/cpu/tmp/cpu_190120_1808.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/cpu/cpu_190120_1813.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/cpu/tmp/cpu_190120_1813.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/cpu/cpu_190120_1821.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/cpu/tmp/cpu_190120_1821.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/cpu/cpu_190121_0049.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/cpu/tmp/cpu_190121_0049.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190122_1617.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2280">
-              <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            <state relative-caret-position="408">
+              <caret line="131" column="51" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -471,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548137939366</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="upload csv">
+      <created>1548143257568</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1548143257568</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -485,14 +485,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15532055" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33617023" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.27234042" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.27234042" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -577,9 +576,9 @@
     <MESSAGE value="complete cpu" />
     <MESSAGE value="add pcode to cpu" />
     <MESSAGE value="del pcode" />
-    <MESSAGE value="upload csv" />
     <MESSAGE value="change the name of a method to snake case" />
-    <option name="LAST_COMMIT_MESSAGE" value="change the name of a method to snake case" />
+    <MESSAGE value="upload csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload csv" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/csv/vga/vga_190118_1734.csv">
@@ -757,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190122_1617.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2280">
-          <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+        <state relative-caret-position="408">
+          <caret line="131" column="51" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="51" />
         </state>
       </provider>
     </entry>

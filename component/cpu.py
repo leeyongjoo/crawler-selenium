@@ -96,7 +96,7 @@ class Cpu:
                             break
 
                     if i == 6:  # 6: clock
-                        if word[-1] == c_dist[j]:
+                        if word[-1].replace(" ", "") == c_dist[j]:
                             self._dict[c_col[i]] = spec.replace(c_dist[j], "")
                             i+=1
                             break
