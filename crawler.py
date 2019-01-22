@@ -33,8 +33,8 @@ class Crawler:
             products = self._browser.find_elements_by_css_selector(
                 "div[class='main_prodlist main_prodlist_list'] .prod_main_info")
 
-            data_list = c_instance.handleDataList(products)
-            f_instance.saveListToCSV(data_list)
+            data_list = c_instance.handle_data_list(products)
+            f_instance.save_list_to_csv(data_list)
             print(str(a) + " page is completed -" + c_instance._name)
 
     def quit(self):
@@ -50,22 +50,19 @@ if __name__ == "__main__":
     file1 = file.File()
     crawler1 = Crawler()
 
-    # 1) vga of computer parts
-    # vga1 = component.vga.Vga.instance()
-    # file1.createCSV(vga1._name)
-    #
-    # url_vga = url_search + vga1._name
-    # pages_vga = 9
-    #
-    # crawler1.crawling(url_vga, pages_vga, vga1, file1)
-    # crawler1.quit()
-
-    # 2) vga of computer parts
+    vga1 = component.vga.Vga.instance()
     cpu1 = component.cpu.Cpu.instance()
-    file1.createCSV(cpu1._name)
 
+    # 1) vga of computer parts
+    file1.create_csv(vga1._name)
+    url_vga = url_search + vga1._name
+    pages_vga = 9
+    crawler1.crawling(url_vga, pages_vga, vga1, file1)
+
+    # 2) cpu of computer parts
+    file1.create_csv(cpu1._name)
     url_cpu = url_search + cpu1._name
     pages_cpu = 2
-
     crawler1.crawling(url_cpu, pages_cpu, cpu1, file1)
+
     crawler1.quit()

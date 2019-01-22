@@ -20,20 +20,20 @@ class Cpu:
     _instance = None
 
     @classmethod
-    def _getInstance(cls):
+    def _get_instance(cls):
         return cls._instance
 
     @classmethod
     def instance(cls, *args, **kargs):
         cls._instance = cls(*args, **kargs)
-        cls.instance = cls._getInstance
+        cls.instance = cls._get_instance
         return cls._instance
 
     def __init__(self):
         self._name = 'cpu'
         self._dict = {col: "NA" for col in c_col}
 
-    def handleDataList(self, products):
+    def handle_data_list(self, products):
         """
         html tag List를 받아 제품 List를 반환
         :param products: html tag로 이루어진 여러 제품에 대한 정보 List

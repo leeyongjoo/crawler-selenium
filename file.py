@@ -11,7 +11,7 @@ class File:
     def __init__(self):
         self.fpath_fname = None
 
-    def createCSV(self, c_name, col_list=None):
+    def create_csv(self, c_name, col_list=None):
         """
         component 이름과 현재시각을 파일명으로 하는 CSV 파일 생성
         :param c_name: component name
@@ -28,7 +28,7 @@ class File:
         # wr.writerow(col_list)
         f.close()
 
-    def saveListToCSV(self, data_list):
+    def save_list_to_csv(self, data_list):
         """
         data_list 내용을 만들어둔 파일에 저장
         :param data_list: data list
