@@ -103,17 +103,23 @@ class Cpu:
 
                     if i == 7:  # 7: l2
                         if word[-1][-1] == 'B':
-                            self._dict[c_col[i+1]] = num[0]
+                            if word[-1][-2] == 'M':
+                                self._dict[c_col[i+1]] = int(num[0]) * 1024
+                            elif  word[-1][-2] == 'K':
+                                self._dict[c_col[i + 1]] = num[0]
                             i+=1
                             break
                         elif word[-1][-1] == 'x':
-                            self._dict[c_col[i]] = int(num[0]) * int(num[1])
+                            if word[-1][0] == 'M':
+                                self._dict[c_col[i+1]] = int(num[0]) * int(num[1]) * 1024
+                            elif  word[-1][0] == 'K':
+                                self._dict[c_col[i+1]] = int(num[0]) * int(num[1])
                             i+=1
                             break
                     if i == 8:  # 8: l3
                         if word[0][-1] == 'B':
                             self._dict[c_col[i-1]] = self._dict[c_col[i]]
-                            self._dict[c_col[i]] = num[0]
+                            self._dict[c_col[i]] = int(num[0]) * 1024
                             i+=1
                             break
 
