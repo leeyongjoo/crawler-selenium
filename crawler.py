@@ -1,6 +1,5 @@
 from selenium import webdriver
-import component.cpu
-import component.vga
+from component import cpu,vga,ram
 import file
 
 # url: danawa.com / tab: ad / limit: number of products / query: something to search
@@ -47,22 +46,22 @@ class Crawler:
 
 
 if __name__ == "__main__":
-    file1 = file.File()
-    crawler1 = Crawler()
+    file = file.File()
+    crawler = Crawler()
 
-    vga1 = component.vga.Vga.instance()
-    cpu1 = component.cpu.Cpu.instance()
+    cpu = cpu.Cpu.instance()
+    vga = vga.Vga.instance()
+    ram = ram.Ram.instance()
 
-    # 1) vga of computer parts
-    file1.create_csv(vga1._name)
-    url_vga = url_search + vga1._name
-    pages_vga = 9
-    crawler1.crawling(url_vga, pages_vga, vga1, file1)
+    components = [cpu, ram, vga]
 
-    # 2) cpu of computer parts
-    # file1.create_csv(cpu1._name)
-    # url_cpu = url_search + cpu1._name
-    # pages_cpu = 3
-    # crawler1.crawling(url_cpu, pages_cpu, cpu1, file1)
+    for com in components:
+        file.create_csv(com._name)
+        url = url_search + com._name
+        if com._name == 'cpu':
+            pages = 3
+        else:
+            pages = 9
+        crawler.crawling(url, pages, com, file)
 
-    crawler1.quit()
+    crawler.quit()
