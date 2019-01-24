@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c141a046-e9e4-4683-9a77-5a336339a395" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/component/mainboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/_vga_col_names.txt" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/_vga_col_names.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190118_1555.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190118_1555.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190118_1558.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190118_1558.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190118_1734.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190118_1734.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190119_0200.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190119_0200.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190119_1231.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190119_1231.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190119_2334.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190119_2334.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190120_1314.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190120_1314.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190122_1516.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190122_1516.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190123_1536.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190123_1536.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/vga/vga_190123_1635.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/vga/vga_190123_1635.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,31 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crawler.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/component/mainboard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1633.csv">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/csv/vga/vga_190119_0200.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -44,17 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/component/vga.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csv/ram/_ram_col_names.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
+            <state relative-caret-position="3000">
+              <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -62,20 +55,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/component/ram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2064">
+            <state relative-caret-position="753">
               <caret line="86" column="89" selection-start-line="86" selection-start-column="89" selection-end-line="86" selection-end-column="89" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+        <entry file="file://$PROJECT_DIR$/component/cpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="264">
+              <caret line="145" column="32" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -100,6 +90,9 @@
       <find>_getInstance</find>
       <find>인텔 코어i7-3세대 3770K (아이비브릿지)</find>
       <find>v_col</find>
+      <find>Ram</find>
+      <find>r_dist</find>
+      <find>find</find>
     </findStrings>
     <replaceStrings>
       <replace>word</replace>
@@ -108,6 +101,10 @@
       <replace>c_col</replace>
       <replace>urlSearch</replace>
       <replace>r_col</replace>
+      <replace>Mainboard</replace>
+      <replace>mainboard</replace>
+      <replace>m_col</replace>
+      <replace>m_dist</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -136,14 +133,15 @@
         <option value="$PROJECT_DIR$/csv/ram/ram_190123_1604.csv" />
         <option value="$PROJECT_DIR$/component/ram.py" />
         <option value="$PROJECT_DIR$/crawler.py" />
+        <option value="$PROJECT_DIR$/component/mainboard.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="140" />
-    <option name="y" value="180" />
-    <option name="width" value="1668" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="208" />
+    <option name="y" value="30" />
+    <option name="width" value="1635" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -170,6 +168,29 @@
               <item name="crawler-selenium" type="462c0819:PsiDirectoryNode" />
               <item name="csv" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="crawler-selenium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crawler-selenium" type="462c0819:PsiDirectoryNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
+              <item name="cpu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crawler-selenium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crawler-selenium" type="462c0819:PsiDirectoryNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
+              <item name="ram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crawler-selenium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crawler-selenium" type="462c0819:PsiDirectoryNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
+              <item name="vga" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crawler-selenium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crawler-selenium" type="462c0819:PsiDirectoryNode" />
+              <item name="reference" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -182,17 +203,17 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\csv\ram" />
-      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\component" />
-      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler\refer_py" />
-      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\csv\cpu\tmp" />
       <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\component" />
       <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\reference" />
       <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler\test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\component" />
+      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler-selenium\csv\ram" />
+      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler\refer_py" />
+      <recent name="C:\Users\LeeYongJoo\Documents\projects\crawler" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -516,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548229206740</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="upload csv">
+      <created>1548308663815</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1548308663815</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -529,14 +557,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="167" y="24" width="1308" height="764" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15532055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24311566" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33617023" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4990086" visible="true" weight="0.27234042" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4990086" weight="0.2754663" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -549,6 +578,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17251462" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33617023" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4990086" visible="true" weight="0.2754663" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.2496454" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.27092198" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2751773" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5009914" side_tool="true" weight="0.27234042" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49947312" weight="0.36312056" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
@@ -628,23 +676,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="upload csv" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1758.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1737.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1802.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1806.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/tmp/cpu_190120_1808.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/cpu/tmp/cpu_190120_1813.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="99" selection-start-line="99" selection-end-line="99" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1836.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1830.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1842.csv" />
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_2355.csv" />
     <entry file="file://$PROJECT_DIR$/csv/vga/vga_190120_1850.csv" />
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190120_1845.csv" />
@@ -672,9 +703,6 @@
           <caret column="63" selection-start-column="63" selection-end-column="64" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190120_1314.csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/csv/cpu/tmp/cpu_190122_1518.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -707,13 +735,6 @@
     <entry file="file://$PROJECT_DIR$/csv/vga/vga_190122_1553.csv" />
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190122_1641.csv" />
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190122_1617.csv" />
-    <entry file="file://$PROJECT_DIR$/component/cpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2424">
-          <caret line="101" column="33" lean-forward="true" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190122_1650.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
@@ -731,9 +752,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/csv/vga/vga_190123_1557.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190123_1536.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190123_1535.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -774,24 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/component/vga.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csv/ram/_ram_col_names.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/component/ram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2064">
-          <caret line="86" column="89" selection-start-line="86" selection-start-column="89" selection-end-line="86" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -805,16 +809,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1633.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+        <state relative-caret-position="408">
+          <caret line="65" column="18" lean-forward="true" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/parsed_xml/cpu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190124_1437.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6151" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/ram/ram_190124_1438.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1633.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/ram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="86" column="89" selection-start-line="86" selection-start-column="89" selection-end-line="86" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/cpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="145" column="32" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190119_1231.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190118_1734.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190118_1558.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190118_1555.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/vga.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3000">
+          <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190120_1314.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190123_1536.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/mainboard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190119_0200.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
