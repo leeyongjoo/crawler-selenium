@@ -53,8 +53,7 @@ if __name__ == "__main__":
     ram = ram.Ram.instance()
     mainboard = mainboard.Mainboard.instance()
 
-    # components = [cpu, ram, vga]
-    components = [mainboard]
+    components = [cpu, ram, vga, mainboard]
 
     for com in components:
         file.create_csv(com._name)
