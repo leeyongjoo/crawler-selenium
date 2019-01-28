@@ -33,6 +33,9 @@ class Cpu:
         self._name = 'cpu'
         self._dict = {col: "NA" for col in c_col}
 
+    def get_name(self):
+        return self._name
+
     def handle_data_list(self, products):
         """
         html tag List를 받아 제품 List를 반환
