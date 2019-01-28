@@ -1,5 +1,5 @@
 from selenium import webdriver
-from component import cpu,vga,ram
+from component import cpu,vga,ram,mainboard
 import file
 
 # url: danawa.com / tab: ad / limit: number of products / query: something to search
@@ -15,7 +15,7 @@ class Crawler:
         # wait 3 minutes
         self._browser.implicitly_wait(3)
 
-    def crawling(self, c_url, numOfPages, c_instance, f_instance):
+    def crawling_to_csv(self, c_url, numOfPages, c_instance, f_instance):
         """
         url에서 데이터를 수집하여 csv파일에 저장
         :param c_url: url about component
@@ -44,7 +44,6 @@ class Crawler:
         self._browser.quit()
 
 
-
 if __name__ == "__main__":
     file = file.File()
     crawler = Crawler()
@@ -52,8 +51,10 @@ if __name__ == "__main__":
     cpu = cpu.Cpu.instance()
     vga = vga.Vga.instance()
     ram = ram.Ram.instance()
+    mainboard = mainboard.Mainboard.instance()
 
-    components = [cpu, ram, vga]
+    # components = [cpu, ram, vga]
+    components = [mainboard]
 
     for com in components:
         file.create_csv(com._name)
@@ -62,6 +63,6 @@ if __name__ == "__main__":
             pages = 3
         else:
             pages = 9
-        crawler.crawling(url, pages, com, file)
+        crawler.crawling_to_csv(url, pages, com, file)
 
     crawler.quit()
