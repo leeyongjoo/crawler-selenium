@@ -12,8 +12,8 @@ class Crawler:
     def __init__(self):
         # use Chrome webdriver
         self._browser = webdriver.Chrome()
-        # wait 3 minutes
-        self._browser.implicitly_wait(3)
+        # wait 10 minutes
+        self._browser.implicitly_wait(10)
 
     def crawling_to_csv(self, c_url, numOfPages, c_instance, f_instance):
         """
@@ -57,8 +57,8 @@ if __name__ == "__main__":
 
     for com in components:
         file.create_csv(com._name)
-        url = url_search + com._name
-        if com._name == 'cpu':
+        url = url_search + com.get_name()
+        if com.get_name() == 'cpu':
             pages = 3
         else:
             pages = 9
