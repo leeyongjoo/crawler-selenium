@@ -82,7 +82,7 @@ class Hdd:
                             self._dict[col_list[col_index]] = num
 
                         elif col_list[col_index] == 'sata':
-                            self._dict[col_list[col_index]] = spec
+                            self._dict[col_list[col_index]] = spec.replace(" ","")
 
                         else:
                             info = ''.join(c for c in spec if c not in ' ,').replace(dist_list[dist_index],"")

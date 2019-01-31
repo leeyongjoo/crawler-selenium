@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c141a046-e9e4-4683-9a77-5a336339a395" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/csv/hdd/Read.me" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/hdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/component/hdd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler.py" afterDir="false" />
@@ -18,20 +17,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+            <state relative-caret-position="201">
+              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csv/hdd/hdd_190131_1351.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="306" selection-start-line="306" selection-end-line="306" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -48,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/component/hdd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+            <state relative-caret-position="2016">
+              <caret line="84" column="80" selection-start-line="84" selection-start-column="80" selection-end-line="84" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -93,6 +83,7 @@
       <find>h_col</find>
       <find>m_dist_index</find>
       <find>d_index</find>
+      <find>GB</find>
     </findStrings>
     <replaceStrings>
       <replace>word</replace>
@@ -144,10 +135,10 @@
         <option value="$PROJECT_DIR$/csv/mainboard/_main_col_names.txt" />
         <option value="$PROJECT_DIR$/test_crawling.py" />
         <option value="$PROJECT_DIR$/component/cpu.py" />
-        <option value="$PROJECT_DIR$/crawler.py" />
         <option value="$PROJECT_DIR$/csv/hdd/_main_hdd_names.txt" />
         <option value="$PROJECT_DIR$/csv/hdd/Read.me" />
         <option value="$PROJECT_DIR$/component/hdd.py" />
+        <option value="$PROJECT_DIR$/crawler.py" />
       </list>
     </option>
   </component>
@@ -238,7 +229,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_crawling">
+  <component name="RunManager" selected="Python.crawler">
     <configuration name="cpu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crawler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -346,8 +337,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_crawling" />
         <item itemvalue="Python.crawler" />
+        <item itemvalue="Python.test_crawling" />
         <item itemvalue="Python.crawling_test" />
         <item itemvalue="Python.cpu" />
         <item itemvalue="Python.test" />
@@ -596,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548755818816</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="complete hdd">
+      <created>1548912385044</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1548912385044</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -612,12 +610,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.20423001" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.20423001" />
       <window_info id="Structure" order="1" sideWeight="0.5018797" side_tool="true" weight="0.20423001" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33617023" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4990086" visible="true" weight="0.3035461" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4990086" visible="true" weight="0.3035461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -704,7 +702,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="test2" />
     <MESSAGE value="succeed crawling" />
     <MESSAGE value="PCIe가 없으면 뒤에 있는 요소가 적재가 안됌" />
@@ -729,18 +726,10 @@
     <MESSAGE value="upload csv" />
     <MESSAGE value="rename file" />
     <MESSAGE value="add hdd" />
-    <option name="LAST_COMMIT_MESSAGE" value="add hdd" />
+    <MESSAGE value="complete hdd" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete hdd" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/csv/vga/vga_190123_1557.csv" />
-    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190123_1535.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="19" column="79" lean-forward="true" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1558.csv" />
     <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1601.csv" />
     <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1604.csv" />
     <entry file="file://$PROJECT_DIR$/csv/ram/ram_190123_1609.csv" />
@@ -929,16 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csv/hdd/_main_hdd_names.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -967,10 +946,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/csv/cpu/cpu_190131_1426.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/hdd/hdd_190131_1434.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/hdd/hdd_190131_1457.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/component/hdd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+        <state relative-caret-position="2016">
+          <caret line="84" column="80" selection-start-line="84" selection-start-column="80" selection-end-line="84" selection-end-column="80" />
         </state>
       </provider>
     </entry>
