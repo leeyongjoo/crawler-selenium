@@ -6,7 +6,7 @@ import re
 #===== column name list
 col_list = ['name','manufacturer','type','size','capacity','sata','rpm','buffer',
             'thickness','noise','as','etc','price']
-dist_list = ['','','','','TB','SATA3','RPM','메모리','두께:','소음(유휴/탐색):','년']
+dist_list = ['','','','','B','b/s','RPM','메모리','두께:','소음(유휴/탐색):','년']
 #===== ;
 
 class Hdd:
@@ -69,23 +69,28 @@ class Hdd:
             self._dict[col_list[col_index]] = specs[1]; col_index+=1         # size
             for spec in specs[2:]:
 
-                # dist_index = col_index - 4  # dist_list index
-
                 for dist_index in range(col_index, len(dist_list)):
 
                     if dist_list[dist_index] in spec:
                         col_index = dist_index
 
-                        # if col_list[col_index] == 'sata':   #SATA3
-                        #     self._dict[col_list[col_index]] = info.replace(" ", "")
-                        #     break
+                        if col_list[col_index] == 'capacity':
+                            num = spec[:-2]
+                            unit = spec[-2:]
+                            if unit == 'GB':
+                                num = float(num) / 1000
+                            self._dict[col_list[col_index]] = num
 
-                        info = ''.join(c for c in spec if c not in ' ,'+dist_list[dist_index])
+                        elif col_list[col_index] == 'sata':
+                            self._dict[col_list[col_index]] = spec
 
-                        word = re.findall("[0-9^]+", info)
-                        info = info.replace(word[-1], "")
+                        else:
+                            info = ''.join(c for c in spec if c not in ' ,').replace(dist_list[dist_index],"")
 
-                        self._dict[col_list[col_index]] = info
+                            while(info[-1].isalpha()):  # 단위 제거
+                                info = info[:-1]
+
+                            self._dict[col_list[col_index]] = info
                         break
 
                     if dist_index == len(dist_list)-1:

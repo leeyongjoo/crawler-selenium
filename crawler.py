@@ -1,5 +1,5 @@
 from selenium import webdriver
-from component import cpu,vga,ram,mainboard
+from component import cpu,vga,ram,mainboard,hdd
 import file
 
 # url: danawa.com / tab: ad / limit: number of products / query: something to search
@@ -52,8 +52,9 @@ if __name__ == "__main__":
     vga = vga.Vga.instance()
     ram = ram.Ram.instance()
     mainboard = mainboard.Mainboard.instance()
+    hdd = hdd.Hdd.instance()
 
-    components = [cpu, ram, vga, mainboard]
+    components = [cpu, ram, vga, mainboard, hdd]
 
     for com in components:
         file.create_csv(com._name)
