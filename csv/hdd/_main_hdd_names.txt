@@ -1,1 +1,0 @@
-name,manufacturer,type,size,capacity,sata,rpm,buffer,width,thickness,noise,as,etc,price
