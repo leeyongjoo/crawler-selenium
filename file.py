@@ -18,11 +18,14 @@ class File:
         :param col_list: column names list
         :return:
         """
+        if not os.path.exists(csv_path):
+            os.mkdir(csv_path)
+
         fpath = csv_path + c_name + "/"
         fname = c_name + strftime("_%y%m%d_%H%M.csv", localtime())
         self.fpath_fname = fpath + fname
 
-        if not os.path.isdir(fpath):
+        if not os.path.exists(fpath):
             os.mkdir(fpath)
 
         # create csv and save col_names to csv
