@@ -54,8 +54,8 @@ if __name__ == "__main__":
     mainboard = mainboard.Mainboard.instance()
     hdd = hdd.Hdd.instance()
 
-    # components = [cpu, ram, vga, mainboard, hdd]
-    components = [hdd]
+    components = [cpu, ram, vga, mainboard, hdd]
+    # components = [hdd]
     for com in components:
         file.create_csv(com._name)
         url = url_search + com.get_name()
