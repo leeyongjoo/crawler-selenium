@@ -1,4 +1,4 @@
-import re
+import os
 import csv
 from time import localtime,strftime
 
@@ -21,6 +21,9 @@ class File:
         fpath = csv_path + c_name + "/"
         fname = c_name + strftime("_%y%m%d_%H%M.csv", localtime())
         self.fpath_fname = fpath + fname
+
+        if not os.path.isdir(fpath):
+            os.mkdir(fpath)
 
         # create csv and save col_names to csv
         f = open(self.fpath_fname, 'w', encoding='utf-8', newline='')
