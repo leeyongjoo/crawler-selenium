@@ -54,7 +54,6 @@ if __name__ == "__main__":
     power = power.Power.instance()
 
     components = [cpu, ram, vga, mainboard, hdd, power]
-    components = [mainboard]
 
     crawlers = []
     threads = []
