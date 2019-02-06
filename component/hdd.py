@@ -1,7 +1,6 @@
 """
 HDD 제품 정보 처리
 """
-import re
 
 #===== column name list
 col_list = ['name','manufacturer','type','size','capacity','sata','rpm','buffer',
@@ -11,10 +10,7 @@ dist_list = ['','','','','B','b/s','RPM','메모리','두께:','소음(유휴/�
 
 class Hdd:
     """
-    Mainboard of computer parts
-
-    Singleton Pattern
-    refer to http://yamalab.tistory.com/74
+    Hdd of computer parts
     """
     _instance = None
 

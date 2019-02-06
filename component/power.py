@@ -1,19 +1,18 @@
 """
-MAINBOARD 제품 정보 처리
+POWER 제품 정보 처리
 """
-import re
 
+import re
 #===== column name list
-col_list = ['name', 'manufacturer', 'socket', 'chipset', 'size', 'phase',
-         'ddr', 'capacity', 'vga_connet', 'pcie_slot', 'sata3', 'm_2_slot',
-         'output', 'ps_2', 'usb_2_0', 'usb_3_1_1', 'usb_3_1_2', 'etc', 'price']
-dist_list = ['cm', '페이즈', 'DDR', 'GB', 'VGA 연결: ', 'PCIe 슬롯: ', 'SATA3: ',
-         'M.2 슬롯: ', 'ch', 'PS/2: ', 'USB 2.0: ', 'USB 3.1 Gen 1: ', 'USB 3.1 Gen 2: ']
+col_list = ['name','manufacturer','standard','w','fan_size','fan_num','pfc','rail',
+            'a','4pin_ide','sata','6+2pin_pci-e','as','etc','price']
+dist_list = ['','','파워', 'W', 'mm 팬', '개(팬)', 'PFC', '+12V',
+	        'A', '4핀 IDE', 'SATA', '6+2핀 PCI-E','무상']
 #===== ;
 
-class Mainboard:
+class Power:
     """
-    Mainboard of computer parts
+    Power of computer parts
     """
     _instance = None
 
@@ -28,7 +27,7 @@ class Mainboard:
         return cls._instance
 
     def __init__(self):
-        self._name = 'mainboard'
+        self._name = 'power'
         self._dict = {col: "NA" for col in col_list}
 
     def get_name(self):
@@ -49,41 +48,41 @@ class Mainboard:
 
             name = product.find_element_by_css_selector(".prod_name a").text
             name_split = name.split(" ")
-            if name_split[-1] == "(중고)":
+            if name_split[-1] == "(중고)":    # except 중고제품
                 continue
 
-            self._dict[col_list[0]] = name             # name
-            self._dict[col_list[1]] = name_split[0]    # manufacturer
+            col_index = 0  # col_list index
+
+            self._dict[col_list[col_index]] = name; col_index+=1             # name
+            self._dict[col_list[col_index]] = name_split[0]; col_index+=1    # manufacturer
 
             # specs is string sep by ' / '
             specs = product.find_element_by_css_selector(".prod_spec_set dd").text
             specs = specs.split(" / ")
 
-            self._dict[col_list[2]] = specs[0]         # socket
-            self._dict[col_list[3]] = specs[1]         # chipset
+            if not dist_list[col_index] in specs[0]:
+                continue
 
-            col_index = 4  # col_list index (start from 'size')
+            # self._dict[col_list[col_index]] = specs[0]; col_index+=1         # standard
+            # self._dict[col_list[col_index]] = specs[1]; col_index+=1         # w
+            # for spec in specs[2:]:
+            for spec in specs:
 
-            for spec in specs[2:]:
+                for dist_index in range(col_index, len(dist_list)):
 
-                dist_index = col_index - 4  # dist_list index
+                    if dist_list[dist_index] in spec:
+                        col_index = dist_index
 
-                num = re.findall("[0-9]+", spec)
+                        info = spec.replace(dist_list[dist_index], "")
+                        info = info.replace(" ", "")
 
-                for d_index in range(dist_index, len(dist_list)):
-
-                    if dist_list[d_index] in spec:
-                        col_index = d_index + 4
-
-                        if col_list[col_index] in ('size', 'vga_connect', 'output'):
-                            self._dict[col_list[col_index]] = spec.replace(dist_list[d_index], "")
-                        elif not len(num):
-                            self._dict[col_list[col_index]] = spec
+                        if col_index in (3, 8,9,10,11,12):
+                            self._dict[col_list[col_index]] = re.findall("[0-9]+", info)[0]
                         else:
-                            self._dict[col_list[col_index]] = num[-1]
+                            self._dict[col_list[col_index]] = info
                         break
 
-                    if d_index == len(dist_list)-1:
+                    if dist_index == len(dist_list)-1:
                         spec = spec.replace(',', '')
 
                         if self._dict['etc'] == "NA":

@@ -12,9 +12,6 @@ v_dist = ['nm', '', '', '개', '', 'GDDR', 'MHz', 'GB', '-bit', '']
 class Vga:
     """
     VGA of computer parts
-
-    Singleton Pattern
-    refer to http://yamalab.tistory.com/74
     """
     _instance = None
 

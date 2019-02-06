@@ -13,9 +13,6 @@ c_dist = ['', 'nm', '코어', '개', 'GHz', 'B', 'B', '비트', 'W',
 class Cpu:
     """
     CPU of computer parts
-
-    Singleton Pattern
-    refer to http://yamalab.tistory.com/74
     """
     _instance = None
 

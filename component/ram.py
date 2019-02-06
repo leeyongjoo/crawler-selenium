@@ -12,9 +12,6 @@ r_dist = ['DDR', '용', 'ea', '포함', 'Dimm', 'GB', 'MHz']
 class Ram:
     """
     Ram of computer parts
-
-    Singleton Pattern
-    refer to http://yamalab.tistory.com/74
     """
     _instance = None
 
