@@ -1,5 +1,6 @@
 from selenium import webdriver
-from component import cpu,vga,ram,mainboard,hdd
+from component import vga,cpu,ram,mainboard,hdd,power
+from threading import Thread
 import file
 
 # url: danawa.com / tab: ad / limit: number of products / query: something to search
@@ -45,24 +46,37 @@ class Crawler:
 
 
 if __name__ == "__main__":
-    file = file.File()
-    crawler = Crawler()
-
     cpu = cpu.Cpu.instance()
     vga = vga.Vga.instance()
     ram = ram.Ram.instance()
     mainboard = mainboard.Mainboard.instance()
     hdd = hdd.Hdd.instance()
+    power = power.Power.instance()
 
-    components = [cpu, ram, vga, mainboard, hdd]
-    # components = [hdd]
+    components = [cpu, ram, vga, mainboard, hdd, power]
+    components = [mainboard]
+
+    crawlers = []
+    threads = []
     for com in components:
-        file.create_csv(com._name)
+        c = Crawler()
+        f = file.File()
+        f.create_csv(com._name)
+
         url = url_search + com.get_name()
         if com.get_name() == 'cpu':
             pages = 3
         else:
             pages = 9
-        crawler.crawling_to_csv(url, pages, com, file)
 
-    crawler.quit()
+        t = Thread(target=c.crawling_to_csv, args=(url, pages, com, f))
+        threads.append(t)
+        crawlers.append(c)
+
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    for c in crawlers:
+        c.quit()
