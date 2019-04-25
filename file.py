@@ -4,6 +4,7 @@ from time import localtime,strftime
 
 csv_path = './csv/'
 
+# file class
 class File:
     """
     파일 생성,저장 메소드 관리
