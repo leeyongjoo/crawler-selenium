@@ -1,10 +1,6 @@
+# -*- coding: utf-8 -*-
 from selenium import webdriver
-from component import vga,cpu,ram,mainboard,hdd,power
-from threading import Thread
-import file
-
-# url: danawa.com / tab: ad / limit: number of products / query: something to search
-url_search = "http://search.danawa.com/dsearch.php?tab=goods&limit=90&query="
+from functions import *
 
 class Crawler:
     """
@@ -36,6 +32,7 @@ class Crawler:
             data_list = c_instance.handle_data_list(products)
             f_instance.save_list_to_csv(data_list)
             print(str(a) + " page is completed -" + c_instance._name)
+        print(c_instance._name, "is finished!")
 
     def quit(self):
         """
@@ -44,38 +41,26 @@ class Crawler:
         """
         self._browser.quit()
 
+    def crawlingPage(self, url):
+        """
+        url로부터 page를 가져온 후 반환
+        :param url: url address
+        :return page: page source
+        """
+        self._browser.get(url)
+        page = self._browser.page_source()
+
+        return page
 
 if __name__ == "__main__":
-    cpu = cpu.Cpu.instance()
-    vga = vga.Vga.instance()
-    ram = ram.Ram.instance()
-    mainboard = mainboard.Mainboard.instance()
-    hdd = hdd.Hdd.instance()
-    power = power.Power.instance()
 
-    components = [cpu, ram, vga, mainboard, hdd, power]
+    searchPageOfDanawa = "http://search.danawa.com/dsearch.php"
+    keyword = "cpu"
+    pageNum = 1
 
-    crawlers = []
-    threads = []
-    for com in components:
-        c = Crawler()
-        f = file.File()
-        f.create_csv(com._name)
+    url = getUrlofDanawa(searchPageOfDanawa, keyword, pageNum)
 
-        url = url_search + com.get_name()
-        if com.get_name() == 'cpu':
-            pages = 3
-        else:
-            pages = 9
+    c = Crawler()
 
-        t = Thread(target=c.crawling_to_csv, args=(url, pages, com, f))
-        threads.append(t)
-        crawlers.append(c)
-
-    for t in threads:
-        t.start()
-    for t in threads:
-        t.join()
-
-    for c in crawlers:
-        c.quit()
+    print(c.crawlingPage(url))
+    c.quit()
