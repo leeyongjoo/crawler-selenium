@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 MAINBOARD 제품 정보 처리
 """
