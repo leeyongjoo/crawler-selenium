@@ -41,26 +41,31 @@ class Crawler:
         """
         self._browser.quit()
 
-    def crawlingPage(self, url):
+#========================================================04.25
+    def getProductList(self, url):
         """
-        url로부터 page를 가져온 후 반환
+        url로부터 page를 가져와서 products를 list로 반환
         :param url: url address
-        :return page: page source
+        :return: list of selenium.webdriver.remote.webelement.WebElement
         """
         self._browser.get(url)
-        page = self._browser.page_source()
 
-        return page
+        # products: list of selenium.webdriver.remote.webelement.WebElement
+        products = self._browser.find_elements_by_css_selector(
+            "div[class='main_prodlist main_prodlist_list'] .prod_main_info")
+
+        return products
+
 
 if __name__ == "__main__":
-
-    searchPageOfDanawa = "http://search.danawa.com/dsearch.php"
     keyword = "cpu"
     pageNum = 1
 
-    url = getUrlofDanawa(searchPageOfDanawa, keyword, pageNum)
+    url = getUrlofDanawa(keyword, pageNum)
 
     c = Crawler()
-
-    print(c.crawlingPage(url))
+    products = c.getProductList(url)
     c.quit()
+
+
+    print(type(products[0]))
