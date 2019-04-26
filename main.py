@@ -1,5 +1,5 @@
 from crawler import Crawler
-from assorter.danawa import mainboard, power, ram, hdd, vga, cpu
+from items.danawa import mainboard, power, ram, hdd, vga, cpu
 from threading import Thread
 import file
 
