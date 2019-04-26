@@ -1,6 +1,11 @@
 # crawler-selenium
 selenium을 이용하여 데이터를 수집
 
+*Selenium* 설치
+>pip install selenium
+
+속도를 위해 *beautifulSoup4* 혼용
+>pip install bs4
 
 ## Links
 - [Chrome Webdriver](http://chromedriver.chromium.org)
