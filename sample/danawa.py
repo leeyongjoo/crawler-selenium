@@ -12,7 +12,7 @@ class Danawa:
     # 상품 개수(30, 60, 90)
     limit = "90"
 
-    def generateUrl(mainboard, keyword, pageNum, tab=tab, limit=limit):
+    def generateUrl(self, keyword, pageNum, tab=tab, limit=limit):
         """
         :param tab: 광고제거 여부(goods==제거)
         :param limit: 보여지는 상품 개수
@@ -20,20 +20,20 @@ class Danawa:
         :param pageNum: 페이지 번호
         :return:
         """
-        return mainboard.searchPageOfDanawa + "?" + "tab=" + tab + "&limit=" + limit \
+        return self.searchPageOfDanawa + "?" + "tab=" + tab + "&limit=" + limit \
                + "&query=" + keyword + "&page=" + str(pageNum)
 
 
 
 # ===== classify
-    def classfyComponent(mainboard, keyword, comp, products):
+    def classfyComponent(self, keyword, comp, products):
         if keyword == 'cpu':
-            return mainboard.classifyCpu(comp, products)
+            return self.classifyCpu(comp, products)
         elif keyword == 'hdd':
-            return mainboard.classifyHdd(comp, products)
+            return self.classifyHdd(comp, products)
 
 
-    def classifyCpu(mainboard, cpu, products):
+    def classifyCpu(self, cpu, products):
         """
         html tag List를 받아 제품 List를 반환
 
@@ -158,7 +158,7 @@ class Danawa:
             output.append(cpu._dict.values())
         return output
 
-    def classifyHdd(mainboard, hdd, products):
+    def classifyHdd(self, hdd, products):
         """
         html tag List를 받아 제품 List를 반환
         :param products: html tag로 이루어진 여러 제품에 대한 정보 List
@@ -301,4 +301,72 @@ class Danawa:
                 mainboard._dict[mainboard.colName[-1]] = 'NA'
 
             output.append(mainboard._dict.values())
+        return output
+
+    def classifyPower(self, power, products):
+        """
+        html tag List를 받아 제품 List를 반환
+        :param products: html tag로 이루어진 여러 제품에 대한 정보 List
+        :return output: 정제된 List
+        """
+        output = [] # list of row
+        for product in products:
+            power.__init__()  # init dict
+
+            if product == "":
+                continue
+
+            name = product.find_element_by_css_selector(".prod_name a").text
+            name_split = name.split(" ")
+            if name_split[-1] == "(중고)":    # except 중고제품
+                continue
+
+            col_index = 0  # col_list index
+
+            power._dict[power.colName[col_index]] = name; col_index+=1             # name
+            power._dict[power.colName[col_index]] = name_split[0]; col_index+=1    # manufacturer
+
+            # specs is string sep by ' / '
+            specs = product.find_element_by_css_selector(".prod_spec_set dd").text
+            specs = specs.split(" / ")
+
+            if not power.colIdentifier[col_index] in specs[0]:
+                continue
+
+            # power._dict[power.colName[col_index]] = specs[0]; col_index+=1         # standard
+            # power._dict[power.colName[col_index]] = specs[1]; col_index+=1         # w
+            # for spec in specs[2:]:
+            for spec in specs:
+
+                for dist_index in range(col_index, len(power.colIdentifier)):
+
+                    if power.colIdentifier[dist_index] in spec:
+                        col_index = dist_index
+
+                        info = spec.replace(power.colIdentifier[dist_index], "")
+                        info = info.replace(" ", "")
+
+                        if col_index in (3, 8,9,10,11,12):
+                            power._dict[power.colName[col_index]] = re.findall("[0-9]+", info)[0]
+                        else:
+                            power._dict[power.colName[col_index]] = info
+                        break
+
+                    if dist_index == len(power.colIdentifier)-1:
+                        spec = spec.replace(',', '')
+
+                        if power._dict['etc'] == "NA":
+                            power._dict['etc'] = spec
+                        else:
+                            power._dict['etc'] += " / " + spec
+
+
+            price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
+            power._dict[power.colName[-1]] = price.replace(",", "")
+
+            # filter the data has no price
+            if not power._dict[power.colName[-1]].isdigit():
+                power._dict[power.colName[-1]] = 'NA'
+
+            output.append(power._dict.values())
         return output
