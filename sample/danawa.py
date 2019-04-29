@@ -38,7 +38,7 @@ class Danawa:
         elif keyword == 'ram':
             return self.classifyRam(comp, products)
         elif keyword == 'vga':
-            return self.classifyRam(comp, products)
+            return self.classifyVga(comp, products)
 
 
     def classifyCpu(self, cpu, products):
