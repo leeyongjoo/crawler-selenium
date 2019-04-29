@@ -1,5 +1,5 @@
 from sample import danawa, crawler
-from sample.items import cpu,hdd,mainboard
+from sample.items import cpu,hdd,mainboard,power
 import sample.file
 import sample.time
 
@@ -7,9 +7,10 @@ import sample.time
 numProductforSearch = 900
 
 def doCrawlingDataAndSaveFile(components, dnw, file, selector):
+    crl = crawler.Crawler()
     for comp in components:
         # 크롤러 생성(크롬창 띄우기)
-        crl = crawler.Crawler()
+
 
         # 키워드 이름
         keyword = comp.__class__.__name__.lower()
@@ -26,17 +27,18 @@ def doCrawlingDataAndSaveFile(components, dnw, file, selector):
             numpageforSearch = int(numProductforSearch / int(dnw.limit))
 
         for pageNum in range(1, numpageforSearch+1):
+            # connecting url
             url = dnw.generateUrl(keyword, pageNum)
 
             # parsing data
             products = crl.parseElementsByCssSelector(url, selector)
+
+            # classfying data
             productDataList = dnw.classfyComponent(keyword, comp, products)
 
             # saving data
-
             file.saveListToCsv(productDataList, dirPath, fileName)
-
-        crl.quit()
+    crl.quit()
 
 def main():
     # 객체 생성
