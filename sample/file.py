@@ -1,14 +1,12 @@
 import os
 import csv
-from time import localtime,strftime
+
 
 # file class
 class File:
     """
     파일 생성,저장 메소드 관리
     """
-
-    csv_path = './csv/'
 
     def __init__(self):
         pass
@@ -23,55 +21,47 @@ class File:
             return True
         return False
 
-    def generateDirPath(self, *dirs):
-        path = "./"
-
+    def generateDirPath(self, dirs):
+        fileDirPath = "./"
         for d in dirs:
-            if not self.isExistPath(d):
-                os.mkdir(dir)
-                path += dir + "/"
+            fileDirPath += d + "/"
+            if not self.isExistPath(fileDirPath):
+                os.mkdir(fileDirPath)
 
-        return path
+        return fileDirPath
 
-    def generateFileName(self, keyword):
+    def generateFile(self, fileDirPath, keyword, strTime, filetype):
+        """
+        keyword 이름과 현재시각을 파일명으로 하는 CSV 파일 생성
+        :param fileDirPath:
+        :param keyword:
+        :param presentTime:
+        :param filetype:
+        :return:
+        """
+        fileName = keyword + "_" + strTime + "." + filetype
 
-    def saveKeywordListToCsv(self, keyword, data_list):
+        if self.isExistFile(fileDirPath + fileName):
+            print(fileDirPath + fileName + " File Exsist!")
+        else:
+            f = open(fileDirPath + fileName, 'w', encoding='utf-8', newline='')
+            f.close()
+        return fileName
+
+
+    def saveListToCsv(self, data_list, fileDirPath, fileName):
         """
         data_list 내용을 만들어둔 파일에 저장
         :param data_list: data list
         :return:
         """
-        # save data to csv
-        f = open(self.fpath_fname, 'a', encoding='utf-8', newline='')
-        wr = csv.writer(f)
-        for row in data_list:
-            wr.writerow(row)
-        f.close()
-
-    def create_csv(self, c_name, col_list=None):
-        """
-        component 이름과 현재시각을 파일명으로 하는 CSV 파일 생성
-        :param c_name: component name
-        :param col_list: column names list
-        :return:
-        """
-        if not os.path.exists(csv_path):
-            os.mkdir(csv_path)
-
-        fpath = csv_path + c_name + "/"
-        fname = c_name + strftime("_%y%m%d_%H%M.csv", localtime())
-        self.fpath_fname = fpath + fname
-
-        if not os.path.exists(fpath):
-            os.mkdir(fpath)
-
-        # create csv and save col_names to csv
-        f = open(self.fpath_fname, 'w', encoding='utf-8', newline='')
-        # wr = csv.writer(f)
-        # wr.writerow(col_list)
-        f.close()
-
-
-
-
-    # =====
+        if not self.isExistFile(fileDirPath + fileName):
+            print(fileDirPath + fileName + " File does not exist!")
+        elif not fileName.endswith('.csv'):
+            print("File is not .csv")
+        else:
+            f = open(fileDirPath + fileName, 'a', encoding='utf-8', newline='')
+            wr = csv.writer(f)
+            for row in data_list:
+                wr.writerow(row)
+            f.close()
