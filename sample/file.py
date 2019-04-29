@@ -49,7 +49,7 @@ class File:
         return fileName
 
 
-    def saveListToCsv(self, data_list, fileDirPath, fileName):
+    def saveListToCsv(self, dataList, fileDirPath, fileName):
         """
         data_list 내용을 만들어둔 파일에 저장
         :param data_list: data list
@@ -62,6 +62,6 @@ class File:
         else:
             f = open(fileDirPath + fileName, 'a', encoding='utf-8', newline='')
             wr = csv.writer(f)
-            for row in data_list:
+            for row in dataList:
                 wr.writerow(row)
             f.close()
