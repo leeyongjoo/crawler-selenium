@@ -1,10 +1,5 @@
 from selenium import webdriver
-from component import vga,cpu,ram,mainboard,hdd,power
-from threading import Thread
-import file
 
-# url: danawa.com / tab: ad / limit: number of products / query: something to search
-url_search = "http://search.danawa.com/dsearch.php?tab=goods&limit=90&query="
 
 class Crawler:
     """
@@ -45,37 +40,14 @@ class Crawler:
         self._browser.quit()
 
 
-if __name__ == "__main__":
-    cpu = cpu.Cpu.instance()
-    vga = vga.Vga.instance()
-    ram = ram.Ram.instance()
-    mainboard = mainboard.Mainboard.instance()
-    hdd = hdd.Hdd.instance()
-    power = power.Power.instance()
+#========================================================04.25
+    def parseElementsByCssSelector(self, url, selector):
+        """
+        url로부터 page를 가져와서 products를 list로 반환
+        :param url: url address
+        :param selector: css selector
+        :return: list of selenium.webdriver.remote.webelement.WebElement
+        """
+        self._browser.get(url)
 
-    components = [cpu, ram, vga, mainboard, hdd, power]
-
-    crawlers = []
-    threads = []
-    for com in components:
-        c = Crawler()
-        f = file.File()
-        f.create_csv(com._name)
-
-        url = url_search + com.get_name()
-        if com.get_name() == 'cpu':
-            pages = 3
-        else:
-            pages = 9
-
-        t = Thread(target=c.crawling_to_csv, args=(url, pages, com, f))
-        threads.append(t)
-        crawlers.append(c)
-
-    for t in threads:
-        t.start()
-    for t in threads:
-        t.join()
-
-    for c in crawlers:
-        c.quit()
+        return self._browser.find_elements_by_css_selector(selector)
