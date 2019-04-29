@@ -31,6 +31,12 @@ class Danawa:
             return self.classifyCpu(comp, products)
         elif keyword == 'hdd':
             return self.classifyHdd(comp, products)
+        elif keyword == 'mainboard':
+            return self.classifyMainboard(comp, products)
+        elif keyword == 'power':
+            return self.classifyPower(comp, products)
+        elif keyword == 'ram':
+            return self.classifyRam(comp, products)
 
 
     def classifyCpu(self, cpu, products):
@@ -369,4 +375,74 @@ class Danawa:
                 power._dict[power.colName[-1]] = 'NA'
 
             output.append(power._dict.values())
+        return output
+
+    def classifyRam(self, ram, products):
+        """
+        html tag List를 받아 제품 List를 반환
+        :param products: html tag로 이루어진 여러 제품에 대한 정보 List
+        :return output: 정제된 List
+        """
+        output = []  # list of row
+        for product in products:
+            ram.__init__()  # init dict
+
+            if product == "":
+                continue
+
+            name = product.find_element_by_css_selector(".prod_name a").text
+            name_split = name.split(" ")
+            if name_split[-1] == "(중고)":
+                continue
+
+            # pcode = product.find_element_by_css_selector(".relation_goods_unit").get_attribute('id')
+            # pcode = re.findall("[0-9]+", pcode)[0]
+            #
+            # ram._dict[r_col[0]] = pcode  # pcode
+            ram._dict[ram.colName[0]] = name  # name
+            ram._dict[ram.colName[1]] = name_split[0]  # manufacturer
+
+            i = 2  # ram.colName index (start from 'ddr')
+
+            # specs is string sep by ' / '
+            specs = product.find_element_by_css_selector(".prod_spec_set dd").text
+            specs = specs.split(" / ")
+            for spec in specs:
+
+                # ram.colName[i] == 'etc'
+                if i == len(ram.colName) - 2:
+                    spec = spec.replace(',', '')
+
+                    if ram._dict[ram.colName[i]] == "NA":
+                        ram._dict[ram.colName[i]] = spec
+                    else:
+                        ram._dict[ram.colName[i]] += " / " + spec
+
+                word = re.findall("[^0-9]+", spec)
+                num = re.findall("[0-9]+", spec)
+
+                # until ram.colName[i] == 'etc'
+                while (i < len(ram.colName) - 2):
+                    j = i - 2
+
+                    if not ram.colIdentifier[j] in spec:
+                        i += 1
+
+                    elif len(num):
+                        ram._dict[ram.colName[i]] = spec.replace(ram.colIdentifier[j], "").replace(",", "")
+                        i += 1
+                        break
+                    else:
+                        ram._dict[ram.colName[i]] = spec
+                        i += 1
+                        break
+
+            price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
+            ram._dict[ram.colName[-1]] = price.replace(",", "")
+
+            # filter the data has no price
+            if not ram._dict[ram.colName[-1]].isdigit():
+                ram._dict[ram.colName[-1]] = 'NA'
+
+            output.append(ram._dict.values())
         return output
