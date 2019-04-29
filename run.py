@@ -1,38 +1,23 @@
 from sample import danawa, crawler
 from sample.items import cpu,hdd
+import sample.file
+import sample.time
 
+# 검색할 상품의 개수, 검색할 페이지의 개수
+numProductforSearch = 900
 
+def doCrawlingDataAndSaveFile(components, dnw, file, selector):
+    for comp in components:
+        # 크롤러 생성(크롬창 띄우기)
+        crl = crawler.Crawler()
 
-def main():
-    # 객체 생성
-    dnw = danawa.Danawa()
-    
-    #TODO thread, file 추가
-
-    # 각 부품 객체 생성
-    component = []
-    component.append(cpu.Cpu.instance())
-    # component.append(hdd.Hdd.instance())
-    # component.append(cpu.Cpu.instance())
-    # component.append(cpu.Cpu.instance())
-    # component.append(cpu.Cpu.instance())
-    # component.append(cpu.Cpu.instance())
-
-    # vga = vga.Vga.instance()
-    # ram = ram.Ram.instance()
-    # mainboard = mainboard.Mainboard.instance()
-    # power = power.Power.instance()
-
-    # 검색할 상품의 개수, 검색할 페이지의 개수
-    numProductforSearch = 900
-    # numpageforSearch = int(numProductforSearch / int(dnw.limit))
-
-    # 상품의 css selector
-    productsSelector = dnw.productsSelector
-
-    for comp in component:
-        crawler = crawler.Crawler()
+        # 키워드 이름
         keyword = comp.__class__.__name__.lower()
+
+        # 파일경로, 파일 이름
+        dirs = ["csv"] + [keyword]
+        dirPath = file.generateDirPath(dirs)
+        fileName = file.generateFile(dirPath, keyword, sample.time.getYMD_HM(), 'csv')
 
         # cpu 는 2 page 까지만...(200개의 상품을 넘어가면 가격이 있는 상품이 얼마 없음)
         if comp is cpu.Cpu.instance():
@@ -44,13 +29,37 @@ def main():
             url = dnw.generateUrl(keyword, pageNum)
 
             # parsing data
-            products = crawler.parseElementsByCssSelector(url, productsSelector)
+            products = crl.parseElementsByCssSelector(url, selector)
             productDataList = dnw.classfyComponent(keyword, comp, products)
 
             # saving data
-            for a in productDataList:
-                print(a)
-        crawler.quit()
+
+            file.saveListToCsv(productDataList, dirPath, fileName)
+
+        crl.quit()
+
+def main():
+    # 객체 생성
+    dnw = danawa.Danawa()
+    file = sample.file.File()
+    
+    #TODO thread, file 추가
+
+    # 각 부품 객체 생성
+    components = []
+    components.append(cpu.Cpu.instance())
+    components.append(hdd.Hdd.instance())
+    # components.append(cpu.Cpu.instance())
+    # components.append(cpu.Cpu.instance())
+    # components.append(cpu.Cpu.instance())
+    # components.append(cpu.Cpu.instance())
+
+    # 상품의 css selector
+    productsSelector = dnw.productsSelector
+
+
+
+    doCrawlingDataAndSaveFile(components, dnw, file, productsSelector)
 
 
 
