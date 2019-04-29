@@ -1,6 +1,6 @@
 csv/
 reference/
-test_*.py
+test/
 
 # Created by https://www.gitignore.io/api/python,windows,pycharm
 # Edit at https://www.gitignore.io/?templates=python,windows,pycharm
