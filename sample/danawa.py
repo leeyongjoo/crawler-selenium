@@ -12,7 +12,7 @@ class Danawa:
     # 상품 개수(30, 60, 90)
     limit = "90"
 
-    def generateUrl(self, keyword, pageNum, tab=tab, limit=limit):
+    def generateUrl(mainboard, keyword, pageNum, tab=tab, limit=limit):
         """
         :param tab: 광고제거 여부(goods==제거)
         :param limit: 보여지는 상품 개수
@@ -20,20 +20,20 @@ class Danawa:
         :param pageNum: 페이지 번호
         :return:
         """
-        return self.searchPageOfDanawa + "?" + "tab=" + tab + "&limit=" + limit \
+        return mainboard.searchPageOfDanawa + "?" + "tab=" + tab + "&limit=" + limit \
                + "&query=" + keyword + "&page=" + str(pageNum)
 
 
 
 # ===== classify
-    def classfyComponent(self, keyword, comp, products):
+    def classfyComponent(mainboard, keyword, comp, products):
         if keyword == 'cpu':
-            return self.classifyCpu(comp, products)
+            return mainboard.classifyCpu(comp, products)
         elif keyword == 'hdd':
-            return self.classifyHdd(comp, products)
+            return mainboard.classifyHdd(comp, products)
 
 
-    def classifyCpu(self, cpu, products):
+    def classifyCpu(mainboard, cpu, products):
         """
         html tag List를 받아 제품 List를 반환
 
@@ -158,7 +158,7 @@ class Danawa:
             output.append(cpu._dict.values())
         return output
 
-    def classifyHdd(self, hdd, products):
+    def classifyHdd(mainboard, hdd, products):
         """
         html tag List를 받아 제품 List를 반환
         :param products: html tag로 이루어진 여러 제품에 대한 정보 List
@@ -233,4 +233,72 @@ class Danawa:
                 hdd._dict[hdd.colName[-1]] = 'NA'
 
             output.append(hdd._dict.values())
+        return output
+
+    def classifyMainboard(self, mainboard, products):
+        """
+        html tag List를 받아 제품 List를 반환
+        :param products: html tag로 이루어진 여러 제품에 대한 정보 List
+        :return output: 정제된 List
+        """
+        output = [] # list of row
+        for product in products:
+            mainboard.__init__()  # init dict
+
+            if product == "":
+                continue
+
+            name = product.find_element_by_css_selector(".prod_name a").text
+            name_split = name.split(" ")
+            if name_split[-1] == "(중고)":
+                continue
+
+            mainboard._dict[mainboard.colName[0]] = name             # name
+            mainboard._dict[mainboard.colName[1]] = name_split[0]    # manufacturer
+
+            # specs is string sep by ' / '
+            specs = product.find_element_by_css_selector(".prod_spec_set dd").text
+            specs = specs.split(" / ")
+
+            mainboard._dict[mainboard.colName[2]] = specs[0]         # socket
+            mainboard._dict[mainboard.colName[3]] = specs[1]         # chipset
+
+            col_index = 4  # mainboard.colName index (start from 'size')
+
+            for spec in specs[2:]:
+
+                dist_index = col_index - 4  # mainboard.colIdenfier index
+
+                num = re.findall("[0-9]+", spec)
+
+                for d_index in range(dist_index, len(mainboard.colIdenfier)):
+
+                    if mainboard.colIdenfier[d_index] in spec:
+                        col_index = d_index + 4
+
+                        if mainboard.colName[col_index] in ('size', 'vga_connect', 'output'):
+                            mainboard._dict[mainboard.colName[col_index]] = spec.replace(mainboard.colIdenfier[d_index], "")
+                        elif not len(num):
+                            mainboard._dict[mainboard.colName[col_index]] = spec
+                        else:
+                            mainboard._dict[mainboard.colName[col_index]] = num[-1]
+                        break
+
+                    if d_index == len(mainboard.colIdenfier)-1:
+                        spec = spec.replace(',', '')
+
+                        if mainboard._dict['etc'] == "NA":
+                            mainboard._dict['etc'] = spec
+                        else:
+                            mainboard._dict['etc'] += " / " + spec
+
+
+            price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
+            mainboard._dict[mainboard.colName[-1]] = price.replace(",", "")
+
+            # filter the data has no price
+            if not mainboard._dict[mainboard.colName[-1]].isdigit():
+                mainboard._dict[mainboard.colName[-1]] = 'NA'
+
+            output.append(mainboard._dict.values())
         return output
