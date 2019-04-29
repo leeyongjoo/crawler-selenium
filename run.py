@@ -1,5 +1,5 @@
 from sample import danawa, crawler
-from sample.items import cpu,hdd
+from sample.items import cpu,hdd,mainboard
 import sample.file
 import sample.time
 
