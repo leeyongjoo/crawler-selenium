@@ -267,24 +267,24 @@ class Danawa:
 
             for spec in specs[2:]:
 
-                dist_index = col_index - 4  # mainboard.colIdenfier index
+                dist_index = col_index - 4  # mainboard.colIdentifier index
 
                 num = re.findall("[0-9]+", spec)
 
-                for d_index in range(dist_index, len(mainboard.colIdenfier)):
+                for d_index in range(dist_index, len(mainboard.colIdentifier)):
 
-                    if mainboard.colIdenfier[d_index] in spec:
+                    if mainboard.colIdentifier[d_index] in spec:
                         col_index = d_index + 4
 
                         if mainboard.colName[col_index] in ('size', 'vga_connect', 'output'):
-                            mainboard._dict[mainboard.colName[col_index]] = spec.replace(mainboard.colIdenfier[d_index], "")
+                            mainboard._dict[mainboard.colName[col_index]] = spec.replace(mainboard.colIdentifier[d_index], "")
                         elif not len(num):
                             mainboard._dict[mainboard.colName[col_index]] = spec
                         else:
                             mainboard._dict[mainboard.colName[col_index]] = num[-1]
                         break
 
-                    if d_index == len(mainboard.colIdenfier)-1:
+                    if d_index == len(mainboard.colIdentifier)-1:
                         spec = spec.replace(',', '')
 
                         if mainboard._dict['etc'] == "NA":
