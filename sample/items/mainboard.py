@@ -23,5 +23,4 @@ class Mainboard:
         return cls._instance
 
     def __init__(self):
-        self._name = 'mainboard'
         self._dict = {col: "NA" for col in self.colName}
