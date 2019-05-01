@@ -4,6 +4,7 @@ import sample.file
 import testcodes.testFunctions as func
 from threading import Thread
 import time
+import multiprocessing
 
 # 객체 생성
 dnw = danawa.Danawa()
@@ -11,13 +12,14 @@ file = sample.file.File()
 # 각 부품 객체 생성
 components = []
 components.append(hdd.Hdd.instance())
+components.append(mainboard.Mainboard.instance())
 
 # [멀티스레드]
 def checkThreadTime():
     # 1-1 멀티스레드를 이용하지 않고 순차적으로 돌려서 시간 측정
-    startTime = time.time()
-    func.doCrawlingDataComponents(components, dnw)
-    print("순차적으로 돌려서 시간 측정: {} sec".format(time.time()-startTime))
+    # startTime = time.time()
+    # func.doCrawlingDataComponents(components, dnw)
+    # print("1) 반복문 이용: {} sec".format(time.time()-startTime))
 
     # 1-2 멀티스레드를 이용하여 시간 측정
     startTime = time.time()
@@ -28,7 +30,19 @@ def checkThreadTime():
         t.start()
     for t in threads:
         t.join()
-    print("멀티스레드를 이용하여 시간 측정: {} sec".format(time.time()-startTime))
+    print("2) 멀티스레드 이용: {} sec".format(time.time()-startTime))
+
+# [멀티프로세스]
+    # 1-3 멀티 프로세스를 이용하여 시간 측정
+    startTime = time.time()
+    processes = []
+    for comp in components:
+        p = multiprocessing.Process(target=func.doCrawlingDataOneComponent, args=(comp, dnw))
+        processes.append(p)
+        p.start()
+    for p in processes:
+        p.join()
+    print("3) 멀티프로세스 이용: {} sec".format(time.time() - startTime))
 
 # [파일]
 def checkFileTime():
@@ -41,6 +55,8 @@ def checkFileTime():
     func.doCrawlingDataAndSaveFileOnce(components, dnw, file)
     print("모든 페이지를 하나의 리스트에 저장한 후 마지막에 한번 파일에 저장: {} sec".format(time.time() - startTime))
 
+
+
 if __name__ == "__main__":
-    # checkThreadTime()
-    checkFileTime()
+    checkThreadTime()
+    # checkFileTime()
