@@ -96,19 +96,5 @@ def main():
     # 크롤링, 파일 저장
     doCrawlingDataAndSaveFile(components, dnw, file)
 
-
-    # threads = []
-    # t = Thread(target=c.crawling_to_csv, args=(url, pages, com, f))
-    # threads.append(t)
-    # crawlers.append(c)
-    #
-    # for t in threads:
-    #     t.start()
-    # for t in threads:
-    #     t.join()
-    #
-    # for c in crawlers:
-    #     c.quit()
-
 if __name__ == "__main__":
     main()
