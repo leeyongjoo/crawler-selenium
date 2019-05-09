@@ -82,7 +82,7 @@ def main():
     dnw = danawa.Danawa()
     file = sample.file.File()
     
-    #TODO thread 추가
+    #TODO Process 추가
 
     # 각 부품 객체 생성
     components = []
