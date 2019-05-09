@@ -1,6 +1,8 @@
 # crawler-selenium
 selenium을 이용하여 데이터를 수집
 
+*Selenium* 설치
+>pip install selenium
 
 ## Links
 - [Chrome Webdriver](http://chromedriver.chromium.org)
