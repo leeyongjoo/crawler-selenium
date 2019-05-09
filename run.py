@@ -88,10 +88,10 @@ def main():
     components = []
     components.append(cpu.Cpu.instance())
     components.append(hdd.Hdd.instance())
-    components.append(mainboard.Mainboard.instance())
-    components.append(power.Power.instance())
-    components.append(ram.Ram.instance())
-    components.append(vga.Vga.instance())
+    # components.append(cpu.Cpu.instance())
+    # components.append(cpu.Cpu.instance())
+    # components.append(cpu.Cpu.instance())
+    # components.append(cpu.Cpu.instance())
 
     # 크롤링, 파일 저장
     doCrawlingDataAndSaveFile(components, dnw, file)
