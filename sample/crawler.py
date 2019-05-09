@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
+<<<<<<< HEAD:crawler.py
 from functions import *
+=======
+
+>>>>>>> develop:sample/crawler.py
 
 class Crawler:
     """
@@ -54,6 +58,7 @@ class Crawler:
         products = self._browser.find_elements_by_css_selector(
             "div[class='main_prodlist main_prodlist_list'] .prod_main_info")
 
+<<<<<<< HEAD:crawler.py
         return products
 
 
@@ -69,3 +74,16 @@ if __name__ == "__main__":
 
 
     print(type(products[0]))
+=======
+#========================================================04.25
+    def parseElementsByCssSelector(self, url, selector):
+        """
+        url로부터 page를 가져와서 products를 list로 반환
+        :param url: url address
+        :param selector: css selector
+        :return: list of selenium.webdriver.remote.webelement.WebElement
+        """
+        self._browser.get(url)
+
+        return self._browser.find_elements_by_css_selector(selector)
+>>>>>>> develop:sample/crawler.py
