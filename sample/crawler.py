@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -*-
 from selenium import webdriver
-<<<<<<< HEAD:crawler.py
-from functions import *
-=======
 
->>>>>>> develop:sample/crawler.py
 
 class Crawler:
     """
@@ -36,7 +31,6 @@ class Crawler:
             data_list = c_instance.handle_data_list(products)
             f_instance.save_list_to_csv(data_list)
             print(str(a) + " page is completed -" + c_instance._name)
-        print(c_instance._name, "is finished!")
 
     def quit(self):
         """
@@ -45,36 +39,7 @@ class Crawler:
         """
         self._browser.quit()
 
-#========================================================04.25
-    def getProductList(self, url):
-        """
-        url로부터 page를 가져와서 products를 list로 반환
-        :param url: url address
-        :return: list of selenium.webdriver.remote.webelement.WebElement
-        """
-        self._browser.get(url)
 
-        # products: list of selenium.webdriver.remote.webelement.WebElement
-        products = self._browser.find_elements_by_css_selector(
-            "div[class='main_prodlist main_prodlist_list'] .prod_main_info")
-
-<<<<<<< HEAD:crawler.py
-        return products
-
-
-if __name__ == "__main__":
-    keyword = "cpu"
-    pageNum = 1
-
-    url = getUrlofDanawa(keyword, pageNum)
-
-    c = Crawler()
-    products = c.getProductList(url)
-    c.quit()
-
-
-    print(type(products[0]))
-=======
 #========================================================04.25
     def parseElementsByCssSelector(self, url, selector):
         """
@@ -86,4 +51,3 @@ if __name__ == "__main__":
         self._browser.get(url)
 
         return self._browser.find_elements_by_css_selector(selector)
->>>>>>> develop:sample/crawler.py
