@@ -61,9 +61,6 @@ def doCrawlingDataAndSaveFileOneComp(comp, dnw, file):
         numpageforSearch = int(numProductforSearch / int(dnw.limit))
 
     for pageNum in range(1, numpageforSearch+1):
-        # print progressBar
-        etc.progressBar.printProgress(pageNum, numpageforSearch, keyword, 'Complete', 1, 50)
-
         # connecting url
         url = dnw.generateUrl(keyword, pageNum)
 
@@ -75,6 +72,9 @@ def doCrawlingDataAndSaveFileOneComp(comp, dnw, file):
 
         # saving data
         file.saveListToCsv(productDataList, dirPath, fileName)
+
+        # print progressBar
+        etc.progressBar.printProgress(pageNum, numpageforSearch, keyword, 'Complete', 1, 50)
     crl.quit()
 
 def main():
