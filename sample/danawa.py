@@ -375,6 +375,8 @@ class Danawa:
                         else:
                             power._dict['etc'] += " / " + spec
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            power._dict['img'] = img
 
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             power._dict[power.colName[-1]] = price.replace(",", "")
