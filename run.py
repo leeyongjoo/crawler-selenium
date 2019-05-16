@@ -3,6 +3,7 @@ from sample.items import cpu,hdd,mainboard,power,ram,vga
 import sample.file
 import etc.time
 import etc.progressBar
+import multiprocessing
 
 # 검색할 상품의 개수
 numProductforSearch = 900
@@ -81,8 +82,6 @@ def main():
     # 객체 생성
     dnw = danawa.Danawa()
     file = sample.file.File()
-    
-    #TODO Process 추가
 
     # 각 부품 객체 생성
     components = []
@@ -93,8 +92,15 @@ def main():
     components.append(ram.Ram.instance())
     components.append(vga.Vga.instance())
 
-    # 크롤링, 파일 저장
-    doCrawlingDataAndSaveFile(components, dnw, file)
+    processes = []
+    for comp in components:
+        # 크롤링, 파일 저장
+        p = multiprocessing.Process(target=doCrawlingDataAndSaveFile, args=(comp, dnw, file))
+        processes.append(p)
+        p.start()
+    for p in processes:
+        p.join()
+
 
 if __name__ == "__main__":
     main()
