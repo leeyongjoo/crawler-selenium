@@ -4,11 +4,10 @@ class Cpu:
 
     Singleton pattern
     """
-    # TODO pcode, imagesrc 추가
     colName = ['name', 'manufacturer', 'socket', 'nm', 'core', 'thread', 'clock',
-                  'l2', 'l3', 'bit', 'tdp', 'gpu_name', 'gpu_core', 'etc', 'price']
+                  'l2', 'l3', 'bit', 'tdp', 'gpu_name', 'gpu_core', 'etc', 'img', 'price']
     colIdentifier = ['', 'nm', '코어', '개', 'GHz', 'B', 'B', '비트', 'W',
-                     ['인텔', 'AMD'], 'MHz']
+                     ['인텔', 'AMD'], 'MHz', 'http']
 
     _instance = None
 
