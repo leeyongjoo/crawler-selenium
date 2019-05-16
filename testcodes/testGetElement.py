@@ -1,9 +1,8 @@
 import testcodes.testFunctions as func
 import sample.danawa
-import sample.items.cpu
+import sample.items
 
-comp = sample.items.cpu.Cpu.instance()
+comp = sample.items.hdd.Hdd.instance()
 dnw = sample.danawa.Danawa()
-
 
 func.printCrawlingDataOneComponent(comp, dnw)
