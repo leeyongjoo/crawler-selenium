@@ -156,6 +156,9 @@ class Danawa:
                         i += 1
                         break
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            cpu._dict['img'] = img
+
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             cpu._dict[colName[-1]] = price.replace(",", "")
 
@@ -232,6 +235,8 @@ class Danawa:
                         else:
                             hdd._dict['etc'] += " / " + spec
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            hdd._dict['img'] = img
 
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             hdd._dict[hdd.colName[-1]] = price.replace(",", "")
@@ -300,6 +305,8 @@ class Danawa:
                         else:
                             mainboard._dict['etc'] += " / " + spec
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            mainboard._dict['img'] = img
 
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             mainboard._dict[mainboard.colName[-1]] = price.replace(",", "")
@@ -368,6 +375,8 @@ class Danawa:
                         else:
                             power._dict['etc'] += " / " + spec
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            power._dict['img'] = img
 
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             power._dict[power.colName[-1]] = price.replace(",", "")
@@ -439,6 +448,9 @@ class Danawa:
                         i += 1
                         break
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            ram._dict['img'] = img
+
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
             ram._dict[ram.colName[-1]] = price.replace(",", "")
 
@@ -457,7 +469,7 @@ class Danawa:
         """
         output = [] # list of row
         for product in products:
-            self.__init__()  # init dict
+            vga.__init__()  # init dict
 
             if product == "":
                 continue
@@ -471,8 +483,8 @@ class Danawa:
             # pcode = re.findall("[0-9]+", pcode)[0]
             #
             # self._dict[Vga.colName[0]] = pcode  # pcode
-            self._dict[vga.colName[0]] = name             # name
-            self._dict[vga.colName[1]] = name_split[0]    # manufacturer
+            vga._dict[vga.colName[0]] = name             # name
+            vga._dict[vga.colName[1]] = name_split[0]    # manufacturer
 
             i = 2  # vga.colName index (start from 'prod_name')
 
@@ -485,10 +497,10 @@ class Danawa:
                 if i == len(vga.colName) - 2:
                     spec = spec.replace(',', '')
 
-                    if self._dict[vga.colName[i]] == "NA":
-                        self._dict[vga.colName[i]] = spec
+                    if vga._dict[vga.colName[i]] == "NA":
+                        vga._dict[vga.colName[i]] = spec
                     else:
-                        self._dict[vga.colName[i]] += " / " + spec
+                        vga._dict[vga.colName[i]] += " / " + spec
 
                 word = re.findall("[^0-9]+", spec)
                 num = re.findall("[0-9]+", spec)
@@ -498,7 +510,7 @@ class Danawa:
 
                     if i == 2:  # 2: prod_name
                         if spec.find(" ") != -1:
-                            self._dict[vga.colName[i]] = ''.join(spec.split(" ")[1:])
+                            vga._dict[vga.colName[i]] = ''.join(spec.split(" ")[1:])
                         i += 1
                         break
 
@@ -508,22 +520,22 @@ class Danawa:
 
                     if i == 4:  # 4: clock , 5: b_clock
                         if len(num) > 1:
-                            self._dict[vga.colName[i]] = num[0];
+                            vga._dict[vga.colName[i]] = num[0];
                             i += 1
-                            self._dict[vga.colName[i]] = num[1];
+                            vga._dict[vga.colName[i]] = num[1];
                             i += 1
                             break
                         else:
                             if len(word) == 1:
-                                self._dict[vga.colName[i]] = num[0]
+                                vga._dict[vga.colName[i]] = num[0]
                             elif len(word) == 2:
-                                self._dict[vga.colName[i + 1]] = num[0]
+                                vga._dict[vga.colName[i + 1]] = num[0]
                             i += 2
                             break
 
                     if i == 7:  # 7: PCIe
                         if spec[:4] == "PCIe":
-                            self._dict[vga.colName[i]] = spec[4:]
+                            vga._dict[vga.colName[i]] = spec[4:]
                         i += 1
                         break
 
@@ -531,16 +543,19 @@ class Danawa:
                         i += 1
 
                     elif len(num):
-                        self._dict[vga.colName[i]] = num[0]
+                        vga._dict[vga.colName[i]] = num[0]
                         i += 1
                         break
 
+            img = product.find_element_by_css_selector(".thumb_image .thumb_link img").get_attribute("src")
+            vga._dict['img'] = img
+
             price = product.find_element_by_css_selector(".prod_pricelist .price_sect strong").text
-            self._dict[vga.colName[-1]] = price.replace(",", "")
+            vga._dict[vga.colName[-1]] = price.replace(",", "")
 
             # filter the data has no price
-            if not self._dict[vga.colName[-1]].isdigit():
-                self._dict[vga.colName[-1]] = 'NA'
+            if not vga._dict[vga.colName[-1]].isdigit():
+                vga._dict[vga.colName[-1]] = 'NA'
 
-            output.append(self._dict.values())
+            output.append(vga._dict.values())
         return output

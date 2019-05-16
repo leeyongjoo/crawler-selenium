@@ -119,3 +119,21 @@ def doCrawlingDataOneComponent(comp, dnw):
         # classfying data
         productDataList = dnw.classfyComponent(keyword, comp, products)
     crl.quit()
+
+def printCrawlingDataOneComponentOnePage(comp, dnw):
+    crl = crawler.Crawler()  # 크롤러 생성(크롬창 띄우기)
+
+    # 키워드 이름
+    keyword = comp.__class__.__name__.lower()
+
+    # connecting url
+    url = dnw.generateUrl(keyword, 1)
+
+    # parsing data
+    products = crl.parseElementsByCssSelector(url, dnw.productsSelector)
+
+    # classfying data
+    productDataList = dnw.classfyComponent(keyword, comp, products)
+    print(productDataList)
+
+    crl.quit()
