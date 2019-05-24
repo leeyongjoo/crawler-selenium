@@ -421,7 +421,7 @@ class Danawa:
             for spec in specs:
 
                 # ram.colName[i] == 'etc'
-                if i == len(ram.colName) - 3:
+                if i == len(ram.colName) - 2:
                     spec = spec.replace(',', '')
 
                     if ram._dict[ram.colName[i]] == "NA":
