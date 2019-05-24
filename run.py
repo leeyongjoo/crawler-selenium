@@ -55,7 +55,7 @@ def doCrawlingDataAndSaveFileOneComp(comp, dnw, file):
     fileName = file.generateFile(dirPath, keyword, etc.time.getYMD_HM(), 'csv')
 
     # cpu 는 1 page 까지만...(100개의 상품을 넘어가면 가격이 있는 상품이 얼마 없음)
-    if keyword is 'cpu':
+    if keyword == 'cpu':
         numpageforSearch = 1
     else:
         numpageforSearch = int(numProductforSearch / int(dnw.limit))
