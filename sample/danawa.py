@@ -79,7 +79,7 @@ class Danawa:
             for spec in specs:
 
                 # colName[i] == 'etc'
-                if i == len(colName) - 3:
+                if i == len(colName) - 2:
                     spec = spec.replace(',', '')
 
                     if cpu._dict[colName[i]] == "NA":
