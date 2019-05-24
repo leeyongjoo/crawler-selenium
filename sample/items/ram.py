@@ -5,7 +5,7 @@ class Ram:
     Singleton Pattern
     """
     colName = ['name', 'manufacturer', 'ddr', 'use', 'count', 'heatsink',
-               'dimm', 'capacity', 'clock', 'etc', 'img', 'price']
+               'dimm', 'capacity', 'clock', 'img', 'etc', 'price']
     colIdentifier = ['DDR', '용', 'ea', '포함', 'Dimm', 'GB', 'MHz', 'http']
     _instance = None
 
