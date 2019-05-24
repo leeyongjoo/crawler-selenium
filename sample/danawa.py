@@ -494,7 +494,7 @@ class Danawa:
             for spec in specs:
 
                 # vga.colName[i] == 'etc'
-                if i == len(vga.colName) - 2:
+                if i == len(vga.colName) - 3:
                     spec = spec.replace(',', '')
 
                     if vga._dict[vga.colName[i]] == "NA":
