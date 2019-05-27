@@ -85,11 +85,11 @@ def main():
     # 각 부품 객체 생성
     components = []
     components.append(cpu.Cpu.instance())
-    # components.append(hdd.Hdd.instance())
-    # components.append(mainboard.Mainboard.instance())
-    # components.append(power.Power.instance())
-    # components.append(ram.Ram.instance())
-    # components.append(vga.Vga.instance())
+    components.append(hdd.Hdd.instance())
+    components.append(mainboard.Mainboard.instance())
+    components.append(power.Power.instance())
+    components.append(ram.Ram.instance())
+    components.append(vga.Vga.instance())
 
     processes = []
     for comp in components:
