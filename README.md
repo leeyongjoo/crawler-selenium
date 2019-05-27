@@ -6,6 +6,7 @@ selenium을 이용하여 데이터를 수집
 
 ## 주의사항
 - Chrome의 버전에 맞는 webdriver를 설치해야 함
+(74.0.3729.6)
 
 ## Links
 - [Chrome Webdriver](http://chromedriver.chromium.org)
