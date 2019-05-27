@@ -7,7 +7,7 @@ class Crawler:
     """
     def __init__(self):
         # use Chrome webdriver
-        self._browser = webdriver.Chrome()
+        self._browser = webdriver.Chrome("./webdriver/chromedriver.exe")
         # wait 10 minutes
         self._browser.implicitly_wait(10)
 
