@@ -4,6 +4,9 @@ selenium을 이용하여 데이터를 수집
 *Selenium* 설치
 >pip install selenium
 
+* anaconda에서는
+>conda install selenium
+
 ## 주의사항
 - Chrome의 버전에 맞는 webdriver를 설치해야 함
 (74.0.3729.6)
