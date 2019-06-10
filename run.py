@@ -1,9 +1,10 @@
-from sample import danawa, crawler
+from sample import danawa, crawler, db
 from sample.items import cpu,hdd,mainboard,power,ram,vga
 import sample.file
 import etc.time
 import etc.progressBar
 import multiprocessing
+
 
 # 검색할 상품의 개수
 numProductforSearch = 900
@@ -72,6 +73,10 @@ def doCrawlingDataAndSaveFileOneComp(comp, dnw, file):
 
         # saving data
         file.saveListToCsv(productDataList, dirPath, fileName)
+
+        # save to DataBase
+        db.makeCtl(dirPath, fileName, keyword)
+        db.saveDB(keyword)
 
         # print progressBar
         etc.progressBar.printProgress(pageNum, numpageforSearch, keyword, 'Complete', 1, 50)

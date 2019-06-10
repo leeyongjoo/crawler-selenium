@@ -82,7 +82,7 @@ class Danawa:
                 if i == len(colName) - 2:
                     spec = spec.replace(',', '')
 
-                    if cpu._dict[colName[i]] == "NA":
+                    if cpu._dict[colName[i]] == "0":
                         cpu._dict[colName[i]] = spec
                     else:
                         cpu._dict[colName[i]] += " / " + spec
@@ -164,7 +164,7 @@ class Danawa:
 
             # filter the data has no price
             if not cpu._dict[colName[-1]].isdigit():
-                cpu._dict[colName[-1]] = 'NA'
+                cpu._dict[colName[-1]] = '0'
 
             output.append(cpu._dict.values())
         return output
@@ -230,7 +230,7 @@ class Danawa:
                     if dist_index == len(hdd.colIdentifier)-1:
                         spec = spec.replace(',', '')
 
-                        if hdd._dict['etc'] == "NA":
+                        if hdd._dict['etc'] == "0":
                             hdd._dict['etc'] = spec
                         else:
                             hdd._dict['etc'] += " / " + spec
@@ -243,7 +243,7 @@ class Danawa:
 
             # filter the data has no price
             if not hdd._dict[hdd.colName[-1]].isdigit():
-                hdd._dict[hdd.colName[-1]] = 'NA'
+                hdd._dict[hdd.colName[-1]] = '0'
 
             output.append(hdd._dict.values())
         return output
@@ -300,7 +300,7 @@ class Danawa:
                     if d_index == len(mainboard.colIdentifier)-1:
                         spec = spec.replace(',', '')
 
-                        if mainboard._dict['etc'] == "NA":
+                        if mainboard._dict['etc'] == "0":
                             mainboard._dict['etc'] = spec
                         else:
                             mainboard._dict['etc'] += " / " + spec
@@ -313,7 +313,7 @@ class Danawa:
 
             # filter the data has no price
             if not mainboard._dict[mainboard.colName[-1]].isdigit():
-                mainboard._dict[mainboard.colName[-1]] = 'NA'
+                mainboard._dict[mainboard.colName[-1]] = '0'
 
             output.append(mainboard._dict.values())
         return output
@@ -370,7 +370,7 @@ class Danawa:
                     if dist_index == len(power.colIdentifier)-1:
                         spec = spec.replace(',', '')
 
-                        if power._dict['etc'] == "NA":
+                        if power._dict['etc'] == "0":
                             power._dict['etc'] = spec
                         else:
                             power._dict['etc'] += " / " + spec
@@ -383,7 +383,7 @@ class Danawa:
 
             # filter the data has no price
             if not power._dict[power.colName[-1]].isdigit():
-                power._dict[power.colName[-1]] = 'NA'
+                power._dict[power.colName[-1]] = '0'
 
             output.append(power._dict.values())
         return output
@@ -424,7 +424,7 @@ class Danawa:
                 if i == len(ram.colName) - 2:
                     spec = spec.replace(',', '')
 
-                    if ram._dict[ram.colName[i]] == "NA":
+                    if ram._dict[ram.colName[i]] == "0":
                         ram._dict[ram.colName[i]] = spec
                     else:
                         ram._dict[ram.colName[i]] += " / " + spec
@@ -456,7 +456,7 @@ class Danawa:
 
             # filter the data has no price
             if not ram._dict[ram.colName[-1]].isdigit():
-                ram._dict[ram.colName[-1]] = 'NA'
+                ram._dict[ram.colName[-1]] = '0'
 
             output.append(ram._dict.values())
         return output
@@ -497,7 +497,7 @@ class Danawa:
                 if i == len(vga.colName) - 2:
                     spec = spec.replace(',', '')
 
-                    if vga._dict[vga.colName[i]] == "NA":
+                    if vga._dict[vga.colName[i]] == "0":
                         vga._dict[vga.colName[i]] = spec
                     else:
                         vga._dict[vga.colName[i]] += " / " + spec
@@ -555,7 +555,7 @@ class Danawa:
 
             # filter the data has no price
             if not vga._dict[vga.colName[-1]].isdigit():
-                vga._dict[vga.colName[-1]] = 'NA'
+                vga._dict[vga.colName[-1]] = '0'
 
             output.append(vga._dict.values())
         return output
