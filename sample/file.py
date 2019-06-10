@@ -39,13 +39,14 @@ class File:
         :param filetype:
         :return:
         """
-        fileName = keyword + "_" + strTime + "." + filetype
+        fileName = keyword + "." + filetype
 
-        if self.isExistFile(fileDirPath + fileName):
-            print(fileDirPath + fileName + " File Exsist!")
-        else:
-            f = open(fileDirPath + fileName, 'w', encoding='utf-8', newline='')
-            f.close()
+        # if self.isExistFile(fileDirPath + fileName):
+        #     print(fileDirPath + fileName + " File Exsist!")
+        # else:
+        f = open(fileDirPath + fileName, 'w', encoding='utf-8', newline='')
+        f.close()
+
         return fileName
 
 
