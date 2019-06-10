@@ -20,5 +20,5 @@ class Ram:
         return cls._instance
 
     def __init__(self):
-        self._dict = {col: "NA" for col in self.colName}
+        self._dict = {col: "0" for col in self.colName}
 
