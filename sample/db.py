@@ -10,12 +10,13 @@ FIELDS TERMINATED BY ','
 (
 name,manufacturer,socket,nm,core,thread,clock,l2,l3,bit,tdp,gpu_name,gpu_core,img,etc,price
 )"""
-    f = open("ctl"+compName+".ctl", "w")
+    f = open("./ctl/"+compName+".ctl", "w")
     f.write(content)
     f.close()
 
 def saveDB(compName):
-    os.system("sqlldr 'CONCAT_EX/1234' control='"+compName+".ctl' errors=200 bad='./log/"+compName+".bad'")
+    os.system("sqlldr 'CONCAT_EX/1234' control='./ctl/"+compName+".ctl' log='./log/"
+            + compName +".log' errors=200 bad='./log/"+compName+".bad'")
 
 if __name__=="__main__":
     pass
