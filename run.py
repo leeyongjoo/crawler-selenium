@@ -25,7 +25,7 @@ def doCrawlingDataAndSaveFile(components, dnw, file):
         if comp is cpu.Cpu.instance():
             numpageforSearch = 2
         else:
-            numpageforSearch = int(numProductforSearch / int(dnw.limit))
+            numpageforSearch = 5
 
         for pageNum in range(1, numpageforSearch+1):
             # print progressBar
@@ -59,7 +59,7 @@ def doCrawlingDataAndSaveFileOneComp(comp, dnw, file):
     if keyword == 'cpu':
         numpageforSearch = 1
     else:
-        numpageforSearch = int(numProductforSearch / int(dnw.limit))
+        numpageforSearch = 5
 
     for pageNum in range(1, numpageforSearch+1):
         # connecting url
@@ -74,12 +74,13 @@ def doCrawlingDataAndSaveFileOneComp(comp, dnw, file):
         # saving data
         file.saveListToCsv(productDataList, dirPath, fileName)
 
-        # save to DataBase
-        db.makeCtl(dirPath, fileName, keyword)
-        db.saveDB(keyword)
-
         # print progressBar
         etc.progressBar.printProgress(pageNum, numpageforSearch, keyword, 'Complete', 1, 50)
+
+    # save to DataBase
+    db.makeCtl(dirPath, fileName, keyword)
+    db.saveDB(keyword)
+
     crl.quit()
 
 def main():
