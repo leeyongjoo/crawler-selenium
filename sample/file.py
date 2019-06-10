@@ -44,7 +44,7 @@ class File:
         if self.isExistFile(fileDirPath + fileName):
             print(fileDirPath + fileName + " File Exsist!")
         else:
-            f = open(fileDirPath + fileName, 'w', encoding='euc-kr', newline='')
+            f = open(fileDirPath + fileName, 'w', encoding='utf-8', newline='')
             f.close()
         return fileName
 
@@ -60,7 +60,7 @@ class File:
         elif not fileName.endswith('.csv'):
             print("File is not .csv")
         else:
-            f = open(fileDirPath + fileName, 'a', encoding='euc-kr', newline='')
+            f = open(fileDirPath + fileName, 'a', encoding='utf-8', newline='')
             wr = csv.writer(f)
             for row in dataList:
                 wr.writerow(row)
