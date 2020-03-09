@@ -9,8 +9,11 @@
 
 ### 병렬 처리
 멀티프로세스를 생성하여 총 6개 부품(CPU, HDD, Mainboard, Power, RAM, VGA)에 대한 검색결과 데이터 수집 실행
-> 파이썬에는 GIL이 존재하여 멀티프로세스와 멀티스레드 간 속도차이 존재. 따라서 멀티프로세스를 이용
+> 파이썬에는 GIL이 존재하여 멀티스레드와 멀티프로세스 간 속도차이 존재. 따라서 멀티프로세스를 이용
 [[python] GIL(Global Interpreter Lock)](https://118k.tistory.com/606) 참조
+
+※ 멀티스레드 & 멀티프로세스 속도 측정
+<img src="https://user-images.githubusercontent.com/46367323/57009884-53b54a80-6c34-11e9-81c9-25a8baed6aba.png" width="70%" title="멀티스레드 멀티프로세스 속도 측정" alt="MT MP Speed"></img><br/>
 
 ### CSV 저장
 ![](example_csv.png)
