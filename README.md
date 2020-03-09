@@ -3,6 +3,7 @@
 
 > BeautifulSoup이나 urllib을 이용한 정적 크롤링으로 일반적인 데이터 수집이 가능하나, Ajax 데이터 수집을 위해서는 동적 크롤링이 필요. 그래서 원하는 데이터를 수집하기 위해 Selenium을 이용한 크롤러를 구현.
 
+## 기능
 ### 데이터 자동 수집
 [다나와](http://danawa.com/)사이트에서 컴퓨터 부품을 검색한 결과를 자동으로 수집
 
@@ -13,7 +14,6 @@
 
 ### CSV 저장
 ![](example_csv.png)
-
 ## 설치
 ```python
 pip install selenium
