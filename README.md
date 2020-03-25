@@ -18,10 +18,6 @@
 
 * ### CSV 저장
 ![](example_csv.png)
-## Installation
-```python
-pip install selenium
-```
 ## Other Installations
 - [Chrome Webdriver](http://chromedriver.chromium.org)
 - [Selenium 설치 및 Chrome Webdriver 설치방법](http://blog.naver.com/PostView.nhn?blogId=kiddwannabe&logNo=221259054433&categoryNo=38&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search)
