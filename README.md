@@ -1,4 +1,4 @@
-# crawler-selenium
+# selenium-crawler
 `머신러닝을 이용한 컴퓨터 부품 추천시스템` 에 필요한 데이터 수집을 위한 크롤러 구현
 
 > BeautifulSoup이나 urllib을 이용한 정적 크롤링으로 일반적인 데이터 수집이 가능하나, ajax 데이터 수집을 위해서는   
